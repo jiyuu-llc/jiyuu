@@ -1,0 +1,94 @@
+#jiyuu {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 500;
+  top: 0;
+  padding: 185px 40px 0 40px;
+  color: white;
+  background: #AA00FF;
+}
+
+#question-card{
+  margin: 0 auto;
+}
+
+.question{
+  text-align: center;
+}
+
+#questionInput{
+  background-color: rgba(255, 255, 255, 0.17);
+  color: black;
+  max-width: 420px;
+  margin: 45px auto;
+}
+
+#passwordConfirm{
+  background-color: rgba(255, 255, 255, 0.17);
+  color: black;
+  max-width: 420px;
+  margin: 45px auto;
+}
+
+#questionInputContain{
+  margin: 0 45px 0 45px;
+}
+
+#questionInputContainLg{
+  text-align: center;
+  margin: 0 45px 0 45px;
+}
+
+
+.qnext{
+  color: #ededed;
+  margin: 80px auto;
+  font-size: 100px !important;
+  cursor: pointer;
+  text-align: center;
+}
+
+.qnext-bottom{
+  color: #ededed;
+  font-size: 100px !important;
+  cursor: pointer;
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  left: 50vw;
+}
+
+.qnext-text{
+  font-size: 80px !important;
+  cursor: pointer;
+}
+.qnext-text-sm{
+  font-size: 40px;
+}
+
+.qnext-text:hover{
+  color: #5ae44d;
+}
+
+.qnext:hover, .qnext-bottom:hover, .qnext-text-sm:hover{
+  color: #5ae44d;
+}
+
+
+#accountSel{
+  color: black;
+}
+
+.new-line{
+  display: block;
+}
+
+.ctn-small{
+  display: flex;
+  margin: 20px auto 0 auto;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.46);
+  max-width: 420px !important;
+}
+

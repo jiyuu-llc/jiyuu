@@ -1,0 +1,38 @@
+.notification-links-bar{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #c4c4c4;
+    margin: 0 auto;
+    background-color: white;
+    text-align:center;
+}
+
+.notification-link{
+    width: 100%;
+    color: dimgrey;
+    border-right: 1px solid #c4c4c4;
+    padding: 0 10px 0 10px;
+    font-size: 20px;
+}
+
+.notification-list{
+    width: 100%;
+    height: 100%;
+}
+
+.notifi-item{
+    width: 100%;
+    padding: 5px;
+    background-color: white;
+    height: 77px;
+}
+
+.notifiImageContain{
+  padding: 6px 0 0 10px;
+  margin: 0 10px 0 0;
+  float: left;
+}
+
+.notifiInfoContain{
+  padding: 8px 0  0 0;
+}

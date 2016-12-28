@@ -1,0 +1,73 @@
+#search{
+    margin: 9px 8px 10px 8px;
+    width: 100%;
+    display: none;
+}
+
+#nav-contain{
+    position: fixed;
+    z-index: 200;
+    top:0;
+    width: 100%;
+}
+
+
+.purpleBar{
+    background-color: #a020f0;
+}
+
+.blueBar{
+    background-color: #1c39ff;
+}
+
+.greenBar{
+    background-color: #40e54f;
+}
+
+.redBar{
+    background-color: red;
+}
+
+.yellowBar{
+    background-color: yellow;
+}
+
+.pinkBar{
+    background-color: hotPink;
+}
+
+.blackBar{
+    background-color: #000000;
+}
+
+.whiteBar{
+    background-color: #ffffff;
+}
+
+.navbar{
+    display: flex;
+    color: #ffffff;
+}
+
+.navButton{
+    background-color: #721fbd !important;
+    border-radius: 50% !important;
+    display: inline-flex;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 1.75rem !important;
+    cursor: pointer;
+}
+
+.navbar-jiyuu{
+    justify-content: space-between;
+}
+
+#button-drawer{
+    display: flex;
+    justify-content: space-between;
+}
+
+#newPostContain{
+    margin: 0 50px 0 50px;
+}

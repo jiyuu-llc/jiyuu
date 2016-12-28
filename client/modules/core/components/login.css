@@ -1,0 +1,35 @@
+#loginCard{
+    margin: 0 auto;
+    max-width: 420px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.login-card-contain{
+    padding-top: 20px
+}
+
+.btn-login{
+    display: inline-flex;
+    width: 100px !important;
+    margin: 0 5px 0 5px;
+}
+
+.btn-center{
+    display: flex;
+    justify-content: center;
+}
+
+.loginText{
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+@media screen and (max-width:768px){
+    #loginCard{
+        margin: 0 10px 0 10px ;
+    }
+
+}

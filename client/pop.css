@@ -1,0 +1,11 @@
+#superPop{
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(50, 54, 56, 0.68);
+    display: flex;
+    align-items: center;
+}

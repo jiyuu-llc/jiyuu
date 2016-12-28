@@ -1,0 +1,29 @@
+
+
+#connectCard{
+}
+
+
+#connectCardContain{
+  margin: 20px 10% 20px 10%;
+  padding: 20px 0 0 0;
+}
+
+.form-flex{
+  display: flex;
+}
+
+.connect-pic{
+  border-radius: 50%;
+  margin: 0 5px 0 0;
+}
+
+.connect-text{
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.delete-connect{
+  float: right;
+}

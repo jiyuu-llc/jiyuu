@@ -1,0 +1,7 @@
+.idea/
+.meteor/local
+.meteor/dev_bundle
+.meteor/platforms
+node_modules/
+.deploy/
+jiyuu.keystore

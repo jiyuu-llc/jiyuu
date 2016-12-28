@@ -1,0 +1,46 @@
+
+.conversation-item{
+    height: 70px;
+    text-align: left;
+    clear: left;
+    position: relative;
+    display: block;
+}
+
+.conversation-item:hover{
+    background-color: #efefef
+}
+
+.convoImageContain{
+    padding: 6px 0 0 10px;
+    margin: 0 10px 0 0;
+    float: left;
+}
+
+.convoImage{
+    border-radius: 50%;
+}
+
+.convoText{
+    font-size: 12px;
+}
+
+.convoDate{
+}
+
+.convoInfoContain{
+    padding: 8px 0  0 0;
+}
+
+.convoDelete{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    width: 70px;
+    height: 100%;
+    text-align:  center;
+    font-size: 50px;
+    display: none;
+    border: 1px solid #3c3c3c;
+}

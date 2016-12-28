@@ -1,0 +1,133 @@
+#flip{
+  margin: 0 0 10px 0;
+}
+
+.user-overview-toggle{
+    color: white;
+    right: 15%;
+    top: 20px;
+    position: absolute;
+    font-size:4em;
+    border: 1px solid black;
+}
+.user-overview-toggle-active{
+    color: white;
+    right: 5px;
+    bottom: 5px;
+    top: initial;
+    position: absolute;
+    font-size:2.5em;
+    border: 1px solid black;
+    z-index: 1005;
+}
+
+.avatar-info-active{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.user-overview-info{
+    position: relative;
+    margin: 20px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 90%;
+    border: 1px dashed black;
+}
+
+.user-overview-info > h2{
+    color: black;
+}
+
+
+#profilePic{
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15%;
+}
+
+.profilePic{
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15%;
+    z-index: 3;
+    position: relative;
+}
+
+.picOverlay{
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+}
+
+.profilePicContain{
+    width: 150px;
+}
+
+.cover-upload-contain{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 2em;
+    z-index: 50;
+}
+
+.cover-upload-icon{
+    color: black;
+}
+
+
+.coverPhoto{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+    .profilePicContain{
+        position: relative;
+        overflow: hidden;
+        margin: 110px auto 0 auto;
+    }
+
+    #flip{
+      margin-bottom: 20px;
+    }
+
+    .user-overview-toggle{
+        color: white;
+        right: 7px;
+        position: absolute;
+        font-size: 3em;
+    }
+
+    .user-overview-toggle-active{
+        color: white;
+    }
+
+    .panel-flip {
+        height: 355px;
+    }
+
+    .pbuttons{
+        height:90px;
+    }
+
+    .pbutton{
+        margin: 3px;
+        width: 21%;
+        margin-top: 8px;
+        height:70px;
+    }
+
+    .profile-container{
+       padding: 0!important;
+    }
+}
