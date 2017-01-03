@@ -20,29 +20,7 @@ const renderIfData = ( files ) => {
 
 const Experiences = ( { files } ) => (
     <div className="container profile-container">
-        <div className="col-md-3 hidden-sm-down">
-            <div className="profile-stuff">
-                <div className="tab-content">
-                    <div className="tab-pane active" id="home">
-                        <div className="row">
-                            <div className="card card-mini">
-                                <div className="card-block"><h4>{FlowRouter.getParam('username')}</h4></div>
-                                <div className="card-block">
-                                    <a className="profile-link" href={"/profile/" + FlowRouter.getParam('username') + "/experiences"}>Experiences</a>
-                                    <a className="profile-link" href="/">Files</a>
-                                    <a className="profile-link" href="/">Cards</a>
-                                </div>
-                            </div>
-                            <ProfileSidebar/>
-                        </div>
-                    </div>
-                    <div className="tab-pane" id="profilePhotos">
-                    </div>
-                    <div className="tab-pane" id="profileModules">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ProfileSidebar/>
         <div className="col-md-9">
           <div id="gallery-contain">
               { renderIfData( files ) }

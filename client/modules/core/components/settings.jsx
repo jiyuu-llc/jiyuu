@@ -75,7 +75,7 @@ const Settings = ({userColor}) => (
                                 <button type="button" className="btn btn-danger btn-s" data-toggle="modal" data-target="#deleteAccountConfirmation">Delete Account</button>
                                 <br/>
                                 <br/>
-                                <center><h6>Current version: 0.1.2</h6></center>
+                                <center><h6>Current version: 0.1.3</h6></center>
                             </div>
                         </div>
                 </div>

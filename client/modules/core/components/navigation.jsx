@@ -80,7 +80,7 @@ const Navigation = ({userColor}) => (
                    <div className="navbar-toggler navButton" type="button" onClick={cogClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
                        <i className="fa fa-cog" aria-hidden="true"/>
                    </div>
-                   <div className="navbar-toggler navButton" type="button" onClick={notifiClick.bind(this)}>
+                   <div className="navbar-toggler navButton" type="button" onClick={notifiClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
                        <i className="fa fa-bell" aria-hidden="true"/>
                    </div>
                </div>

@@ -50,7 +50,7 @@ p.postBody img {
     left: 0;
     bottom: 0;
     right: 0;
-    margin: 23px auto;
+    margin: 25px auto;
     background: #fff;
     border: 2px solid white;
     border-radius: 50%;
@@ -67,7 +67,7 @@ p.postBody img {
 }
 
 .post-heading{
-    height: 65px;
+    height: 67px;
     padding: 2px 10px 0 10px !important;
     background-color: #f5f5f5;
     border-bottom: 1px solid #e5e5e5;
@@ -105,7 +105,7 @@ p.postBody img {
 }
 
 .postBody{
-    margin: 20px 0 0 0;
+    margin: 0 0 0 0;
 }
 
 @media screen and (max-width: 350px) {

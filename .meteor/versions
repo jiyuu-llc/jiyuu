@@ -7,7 +7,8 @@ babel-compiler@6.13.0
 babel-runtime@1.0.1
 base64@1.0.10
 binary-heap@1.0.10
-blaze@2.2.0
+blaze@2.2.1
+blaze-html-templates@1.0.5
 blaze-tools@1.0.10
 boilerplate-generator@1.0.11
 caching-compiler@1.1.9
@@ -15,7 +16,6 @@ caching-html-compiler@1.0.7
 callback-hook@1.0.10
 check@1.2.4
 coffeescript@1.11.1_4
-crosswalk@1.7.0
 ddp@1.2.5
 ddp-client@1.3.2
 ddp-common@1.2.8
@@ -31,7 +31,7 @@ email@1.1.18
 es5-shim@4.6.15
 fastclick@1.0.13
 fortawesome:fontawesome@4.7.0
-fourseven:scss@3.10.1
+fourseven:scss@3.13.0
 geojson-utils@1.0.10
 hot-code-push@1.0.4
 html-tools@1.0.11
@@ -46,7 +46,7 @@ localstorage@1.0.12
 logging@1.1.16
 meteor@1.6.0
 meteor-base@1.0.4
-meteorhacks:kadira@2.30.2
+meteorhacks:kadira@2.30.3
 meteorhacks:meteorx@1.4.1
 meteorhacks:subs-manager@1.6.4
 minifier-js@1.2.15
@@ -68,7 +68,7 @@ peerlibrary:assert@0.2.5
 peerlibrary:aws-sdk@2.4.9_1
 peerlibrary:blocking@0.5.2
 peerlibrary:check-extension@0.2.1
-peerlibrary:computed-field@0.6.0
+peerlibrary:computed-field@0.6.1
 peerlibrary:data-lookup@0.1.0
 peerlibrary:fiber-utils@0.6.0
 peerlibrary:reactive-mongo@0.1.1
@@ -95,7 +95,6 @@ spacebars@1.0.13
 spacebars-compiler@1.0.13
 srp@1.0.10
 standard-minifier-js@1.2.1
-static-html@1.1.13
 templating@1.2.15
 templating-compiler@1.2.15
 templating-runtime@1.2.15

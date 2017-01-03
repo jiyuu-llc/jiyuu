@@ -33,7 +33,7 @@ const ProfileButtonsBar = () => ({
                 <div className="pbutton">
                   <div className="pb-text">
                     <i className="fa fa-clone pb-icon" aria-hidden="true"/>
-                    <p>Gallery</p>
+                    <p>Files</p>
                   </div>
                 </div>
             </div>

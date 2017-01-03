@@ -83,17 +83,21 @@ const coverChange = () =>{
     }
 };
 
+const userNameClick = () =>{
+    FlowRouter.go(FlowRouter.getParam('username'));
+};
 
 const ProfileOverview = () => (
     <div id="flip" className="flip-container">
         <div className="flipper">
             <div className="front">
+                <span className="fa fa-info-circle user-overview-toggle-active" aria-hidden="true" onClick={clickOverview.bind(this)}/>
                 <div className="card panel-white profile-widget panel-shadow panel-flip">
                     <div onClick={coverPicClick.bind(this)} className="cover-upload-contain">
                         <input onChange={coverChange.bind(this)} id="coverUpload" className="picOverlay" type="file"/>
                         <span onClick={coverPicClick.bind(this)} className="fa fa-camera cover-upload-icon" type='file'> </span>
                     </div>
-                        <img id="coverPhoto" className="coverPhoto" src={getUserInfo('username', FlowRouter.getParam('username'), 'cover')}/>
+                        <img id="coverPhoto" className="coverPhoto" src={getUserInfo('username', FlowRouter.getParam('username'), 'cover') || '/images/cover.jpeg'}/>
                         <button id="confirmCoverUpload" onClick={confirmCoverUploadClick.bind(this)} className="btn btn-primary-outline">Save</button>
                     <div className="col-xs-12 topP">
                                 <div className="profilePicContain">
@@ -102,10 +106,9 @@ const ProfileOverview = () => (
                                     <img className="hidden-md-up" id="profilePic" src={getUserInfo('username', FlowRouter.getParam('username'), 'avatar') || '/images/users.png'} width="150px" height="150px"/>
                                 </div>
                     </div>
-                    <div className="details">
-                        <span className="fa fa-info-circle user-overview-toggle" aria-hidden="true" onClick={clickOverview.bind(this)}/>
-                        <h3 className="profileName hidden-md-up">{getUserInfo('username', FlowRouter.getParam('username'), 'name')}</h3>
-                        <h5 className="profileUsername hidden-md-up">@{FlowRouter.getParam('username')}</h5>
+                    <div className="details hidden-md-up">
+                        <h3 className="profileName">{getUserInfo('username', FlowRouter.getParam('username'), 'name')}</h3>
+                        <h5 className="profileUsername">@{FlowRouter.getParam('username')}</h5>
                     </div>
                 </div>
             </div>

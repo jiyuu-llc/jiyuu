@@ -217,5 +217,11 @@ Meteor.methods({
             sender: sender,
             receiver: receiver,
         });
+    },
+
+    'scrapeAll'(){
+        scraperAddToFeed('__scraped__TheMindUnleashed');
+        scraperAddToFeed('__scraped__TheAntiMedia');
+        scraperAddToFeed('__scraped__Futurism');
     }
 });

@@ -144,7 +144,7 @@
 
 .panel-flip{
     font-size: 13px;
-    color: #454545;
+    color: #000000;
     position: relative;
     overflow-x: hidden;
     font-family: 'Source Sans Pro', 'Oxygen', sans-serif;
@@ -180,7 +180,7 @@
     z-index: 1000;
 }
 .profileUsername{
-    color: #4a4a4a;
+    color: #000000;
 }
 
 .profile-container{
