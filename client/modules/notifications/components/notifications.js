@@ -9,7 +9,7 @@ const Notifications = () => ({
                 <div className="notifications">
                     <div className="notification-links-bar">
                         <a className="notification-link">Alerts</a>
-                        <a className="notification-link">Requests</a>
+                        <a href="/requests" className="notification-link">Requests</a>
                     </div>
                 </div>
                 <div className="notification-list">

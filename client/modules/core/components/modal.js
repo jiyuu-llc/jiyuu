@@ -45,6 +45,13 @@ const Modal = ({connections}) => ({
                         });
                     }
                 });
+            }else{
+                var url = false;
+                Meteor.call('feed.add', content, canView, url, file, (err, res) => {
+                    if (!err && res) {
+                        $("#postValue").val(null);
+                    }
+                });
             }
 
         }

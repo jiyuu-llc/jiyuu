@@ -236,6 +236,10 @@
 
 @media screen and (max-width: 768px) {
 
+    .profileRight{
+        padding: 0 !important;
+    }
+
   .flip-container{
     width: 100%;
     min-height: 355px;

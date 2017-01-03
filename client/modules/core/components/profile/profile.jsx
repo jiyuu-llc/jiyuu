@@ -10,7 +10,7 @@ const Profile = () => ({
     return (
       <div className="container profile-container">
                   <ProfileSidebar/>
-        <div className="col-md-9">
+        <div className="col-md-9 profileRight">
           <ProfileOverview />
           <div id="profileMain" className="col-xs-12">
             <ProfileButtonsBar />

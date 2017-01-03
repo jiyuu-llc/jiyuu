@@ -26,6 +26,7 @@ import AccountType from './components/signup/accountType.js';
 import Interests from './components/signup/interests.js';
 import Admin from './components/admin.jsx';
 import Call from './components/call.jsx';
+import Requests from './components/requests.jsx';
 
 export default function (injectDeps, {FlowRouter}) {
     const MainLayoutCtx = injectDeps(MainLayout);
@@ -109,6 +110,20 @@ export default function (injectDeps, {FlowRouter}) {
 
             mount(MainLayoutCtx, {
                 content: () => (<Notifications/>)
+            });
+        }
+    });
+
+    FlowRouter.route('/requests', {
+        name: 'requests',
+        action() {
+
+            if (!Meteor.userId()) {
+                FlowRouter.go('/login');
+            }
+
+            mount(MainLayoutCtx, {
+                content: () => (<Requests/>)
             });
         }
     });

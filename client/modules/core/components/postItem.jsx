@@ -70,7 +70,7 @@ const renderIfData = (post) => {
                         </a>
                         <h5 className="postDate">{post.createdAt ? moment(post.createdAt).fromNow() : null}</h5>
                     </div>
-                    <div className="post-options">
+                    <div className="post-options" onClick={postOptionsClick.bind(this, post)}>
                         <i className="fa fa-ellipsis-h options-button" aria-hidden="true"/>
                     </div>
                 </div>
