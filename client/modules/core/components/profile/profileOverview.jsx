@@ -103,7 +103,7 @@ const ProfileOverview = () => (
                                 <div className="profilePicContain">
                                     <button id="confirmUpload" onClick={confirmUploadClick.bind(this)} className="btn btn-primary-outline">Save</button>
                                     <input id="profileUpload" onChange={profileChange.bind(this)} type="file" className="picOverlay" onClick={profilePicClick.bind(this)}/>
-                                    <img className="hidden-md-up" id="profilePic" src={getUserInfo('username', FlowRouter.getParam('username'), 'avatar') || '/images/users.png'} width="150px" height="150px"/>
+                                    <img className="hidden-md-up" id="profilePic" src={getUserInfo('username', FlowRouter.getParam('username'), 'avatar') || '/images/users.png'} width="130px" height="130px"/>
                                 </div>
                     </div>
                     <div className="details hidden-md-up">

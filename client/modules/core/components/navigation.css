@@ -16,32 +16,113 @@
     background-color: #a020f0;
 }
 
+.purpleBar-btn{
+    background-color: #721fbd !important;
+    border-radius: 50% !important;
+    display: inline-flex;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 1.75rem !important;
+    cursor: pointer;
+}
+
 .blueBar{
     background-color: #1c39ff;
+}
+
+.blueBar-btn{
+    background-color: #1922bd !important;
+    border-radius: 50% !important;
+    display: inline-flex;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 1.75rem !important;
+    cursor: pointer;
 }
 
 .greenBar{
     background-color: #40e54f;
 }
 
+.greenBar-btn{
+    background-color: #33bc40 !important;
+    border-radius: 50% !important;
+    display: inline-flex;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 1.75rem !important;
+    cursor: pointer;
+}
+
 .redBar{
     background-color: red;
+}
+
+.redBar-btn{
+    background-color: #bd383b !important;
+    border-radius: 50% !important;
+    display: inline-flex;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 1.75rem !important;
+    cursor: pointer;
 }
 
 .yellowBar{
     background-color: yellow;
 }
 
+.yellowBar-btn{
+    background-color: #d8db10 !important;
+    border-radius: 50% !important;
+    display: inline-flex;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 1.75rem !important;
+    cursor: pointer;
+}
+
 .pinkBar{
     background-color: hotPink;
+}
+
+.pinkBar-btn{
+    background-color: #da5d99 !important;
+    border-radius: 50% !important;
+    display: inline-flex;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 1.75rem !important;
+    cursor: pointer;
 }
 
 .blackBar{
     background-color: #000000;
 }
 
+.blackBar-btn{
+    background-color: #721fbd !important;
+    border-radius: 50% !important;
+    display: inline-flex;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 1.75rem !important;
+    cursor: pointer;
+}
+
 .whiteBar{
     background-color: #ffffff;
+}
+
+.whiteBar-btn{
+    border: 1px solid black;
+    border-radius: 50% !important;
+    display: inline-flex;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 1.75rem !important;
+    cursor: pointer;
+    color: black;
 }
 
 .navbar{

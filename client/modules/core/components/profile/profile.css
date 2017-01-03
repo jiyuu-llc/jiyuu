@@ -7,10 +7,6 @@
     margin: 0;
 }
 
-.details{
-    background-color: rgba(218, 216, 216, 0.28);
-}
-
 .bottomD{
     margin: 0 0 0 0;
     padding-right: 0;
@@ -167,7 +163,8 @@
 }
 
 .details {
-    padding: 20px 0 15px;
+    background-color: rgba(218, 216, 216, 0.28);
+    padding: 5px 0 0 0;
     text-align: center;
     margin: 0 0 0 0;
     z-index: 1;
@@ -276,7 +273,7 @@
         padding: 120px 0 10px;
     }
 
-    .profile-widget .details {
+    .profile-widget {
         padding: 11px 0px 15px;
     }
     .avatar-active{
