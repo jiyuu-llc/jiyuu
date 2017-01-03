@@ -76,7 +76,7 @@
     top: 10px;
     left: 10px;
     font-size: 2em;
-    z-index: 50;
+    z-index: 9005;
 }
 
 .cover-upload-icon{
@@ -94,7 +94,7 @@
     .profilePicContain{
         position: relative;
         overflow: hidden;
-        margin: 145px auto 0 auto;
+        margin: 140px auto 0 auto;
     }
 
     #flip{

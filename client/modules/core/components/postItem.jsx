@@ -6,10 +6,8 @@ import togglePop from '../../../pops';
 
 const postOptionsClick = (post) => {
     console.log("Clicked!");
-    if (post.userId === Meteor.userId()){
-        Session.set('postId', post._id);
+        Session.set('currentPost', post);
         $("#postOptions").modal("toggle");
-    }
 };
 
 const handleTap = (post) =>{

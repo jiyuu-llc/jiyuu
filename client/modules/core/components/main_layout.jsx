@@ -2,7 +2,6 @@ import React from 'react';
 import ResolveUsers from '../containers/connectedUsers.js';
 import Navigation from '../containers/navigation.js';
 import Modal from '../containers/modal.js';
-import PostModal from './postModal.js'
 /* import jPop from '../../../pops'; */
 
 const Paginator = () => ({
@@ -32,7 +31,7 @@ const Paginator = () => ({
 
                     if (new Date().getTime() - 1200 > Session.get('lastScrolled')){
                         Session.set('lastScrolled', new Date().getTime());
-                        Session.set('paginationLimit', Session.get('paginationLimit') + 7);
+                        Session.set('paginationLimit', Session.get('paginationLimit') + 5);
                     }
 
                 } else {
@@ -54,9 +53,7 @@ const Layout = ({ content }) => (
                 <div id="page-content">
                     {content()}
                 </div>
-
                 <Modal />
-                <PostModal />
                 <Paginator />
             </div>
 );

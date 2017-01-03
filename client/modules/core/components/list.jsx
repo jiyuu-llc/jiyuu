@@ -1,5 +1,6 @@
 import React from 'react';
 import PostItem from './postItem.jsx';
+import PostModal from './postModal.js'
 
 const renderIfData = (feed) => {
 
@@ -13,9 +14,12 @@ const renderIfData = (feed) => {
 };
 
 const List = ({feed}) => (
+    <div>
 	<div className="postList col-md-12">
 		{renderIfData(feed)}
 	</div>
+        <PostModal/>
+    </div>
 );
 
 export default List;

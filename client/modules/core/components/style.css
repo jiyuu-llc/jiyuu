@@ -73,3 +73,7 @@ label {
   top: 0;
   left: 0;
 }
+
+.bigDog{
+  z-index: 9005 !important;
+}
