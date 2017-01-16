@@ -52,7 +52,6 @@ const Messenger = () => ({
                         <h3 id="newMsgBtn" onClick={this.newMsg.bind(this)}><i className="fa fa-pencil-square-o" aria-hidden="true"/></h3>
                         <div id="dMsg" onClick={this.dMsgPop.bind(this)}>
                             <i className="fa fa-user-secret" aria-hidden="true"/>
-                            <input id="dMsgUpload" size="100" type="file" className="dMsgOverlay"/>
                         </div>
                     </div>
                     <div id="messenger-title" className="hidden-xs-down col-sm-6 col-md-5 col-lg-6">

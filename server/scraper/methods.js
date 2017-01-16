@@ -9,5 +9,19 @@ Meteor.methods({
   },
   'scrape.futurism': () => {
     scraperAddToFeed('__scraped__Futurism');
+  },
+  'scrape.torrentfreak': () => {
+    scraperAddToFeed('__scraped__TorrentFreak');
+  },
+  'scrape.linux': () => {
+    scraperAddToFeed('__scraped__Linux');
+    console.log("scraped");
+  },
+  'scrapeAll'(){
+    scraperAddToFeed('__scraped__TheMindUnleashed');
+    scraperAddToFeed('__scraped__TheAntiMedia');
+    scraperAddToFeed('__scraped__Futurism');
+    scraperAddToFeed('__scraped__TorrentFreak');
+    scraperAddToFeed('__scraped__Linux');
   }
 });

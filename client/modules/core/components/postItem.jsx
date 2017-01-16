@@ -3,6 +3,7 @@ import moment from 'moment';
 import Hammer from 'react-hammerjs';
 import Render from '../components/render.jsx';
 import togglePop from '../../../pops';
+import CommentsList from "../containers/comments.js"
 
 const postOptionsClick = (post) => {
     console.log("Clicked!");
@@ -91,6 +92,7 @@ const renderIfData = (post) => {
                     <input id={"cmtd" + post._id} type="text" onClick={commentClick.bind(this, post)} className="form-control commentInput" placeholder="Reply"/>
                     <button id={"cmt" + post._id} type="button" onClick={commentSubmit.bind(this, post)} className="commentBtn"><i className="fa fa-comment-o" aria-hidden="true"/></button>
                 </div>
+                <CommentsList data={post._id}/>
             </div>
     )
 };

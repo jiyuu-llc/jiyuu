@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import MessageItem from './messageItem.js';
 
 const renderIfData = (messageItems) => {
-    if (Session.get("convoType") == "destructive"){
-        console.log("Executed");
-        //setTimeout(function(){ Meteor.call('convo.delete',Session.get('convoId')); }, 10000);
-    }
     if (messageItems && messageItems.length > 0) {
         return messageItems.map((data) => {
             return <MessageItem key={data._id} data={data}/>;
@@ -28,6 +24,15 @@ const MessageList = React.createClass({
         this.shouldScrollBottom = node.scrollTop + node.offsetHeight === node.scrollHeight;
     },
     componentDidUpdate() {
+        const {messageItems} = this.props;
+        try {
+            var explosive = messageItems[0];
+        } catch (TypeError) {}
+        if(explosive.explosive){
+            Meteor.call('convo.delayedDelete', FlowRouter.getParam('convo'));
+        }else{
+            console.log("No boom");
+        }
         if (this.shouldScrollBottom) {
             var node = ReactDOM.findDOMNode(this);
             node.scrollTop = node.scrollHeight

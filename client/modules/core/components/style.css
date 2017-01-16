@@ -77,3 +77,12 @@ label {
 .bigDog{
   z-index: 9005 !important;
 }
+
+.weirdPanel{
+    justify-content: center;
+    background-color: rgba(29, 29, 29, 0.16) !important;
+}
+
+.weirdContent{
+  background-color: rgba(197, 197, 197, 0.34) !important;
+}

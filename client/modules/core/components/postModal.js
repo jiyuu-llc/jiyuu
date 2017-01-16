@@ -14,7 +14,7 @@ const renderModal = () =>{
     if (currentPost.userId === Meteor.userId()) {
         return(
             <div className="modal fade" id="postOptions" role="dialog">
-                <div className="modal-dialog bigDog">
+                <div className="modal-dialog">
 
                     <div className="modal-content">
                         <div className="modal-body">
@@ -34,14 +34,14 @@ const renderModal = () =>{
     }else{
         return(
             <div className="modal fade" id="postOptions" role="dialog">
-                <div className="modal-dialog bigDog">
-                    <div className="modal-content">
+                <div className="modal-dialog">
+                    <div className="modal-content weirdContent">
                         <div className="modal-body">
-                            <center><button className="btn btn-primary-outline">Share</button></center>
+                            <center><button className="btn btn-primary">Share</button></center>
                             <br/>
-                            <center><button className="btn btn-primary-outline">Report</button></center>
+                            <center><button className="btn btn-primary">Report</button></center>
                             <br/>
-                            <center><button className="btn btn-primary-outline">See more</button></center>
+                            <center><button className="btn btn-primary">See more</button></center>
                         </div>
                     </div>
 

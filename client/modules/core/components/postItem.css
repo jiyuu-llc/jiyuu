@@ -42,6 +42,17 @@ p.postBody img {
     border-radius: 0.25rem;
 }
 
+.comment-list{
+    margin-top: -1px;
+    border-top: 1px solid grey;
+}
+
+.comment-item{
+    width: 100%;
+    padding: 5px;
+    display: block;
+}
+
 .post-profile-image{
     z-index: 20;
     position: absolute;

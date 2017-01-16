@@ -3,7 +3,7 @@ import React from 'react';
 const closeSearch = () => {
     $("#searchContain").collapse("hide");
     Session.set('searchResults', null);
-}
+};
 
 const handleSearch = (users, feed) => {
 	var lastSearchTime = Session.get('lastSearchTime');
@@ -24,7 +24,7 @@ const handleSearch = (users, feed) => {
 	//	setSearchResults(users, feed);
 	//}
 	
-}
+};
 
 const setSearchResults = (users, feed) => {
 	var searchValue = $('input#searchInput').val();
@@ -35,7 +35,7 @@ const setSearchResults = (users, feed) => {
 	);
 
 	Session.set('searchResults', results);
-}
+};
 
 const renderSearchResults = (searchResults) => {
 	if (searchResults) {
@@ -45,7 +45,7 @@ const renderSearchResults = (searchResults) => {
 			)
 		});
 	}
-}
+};
 
 const Search = ({searchResults, users, feed}) => (
 	<div className="collapse" id="searchContain">

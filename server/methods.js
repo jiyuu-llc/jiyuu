@@ -9,7 +9,12 @@ Meteor.methods({
         Convos.remove({_id:id});
     },
 
-    'convo.create'(id1,un2,type,data) {
+    'convo.delayedDelete'(id){
+        Meteor.setTimeout(function(){Convos.remove({_id:id});}, 10000);
+        console.log("woooooo!")
+    },
+
+    'convo.create'(id1,un2 ,data) {
         // XXX: Do some user authorization
 
         var id2;
@@ -23,7 +28,7 @@ Meteor.methods({
                 {id2: id1}
             ];*/
 
-            Convos.upsert({users: users, type: type},
+            Convos.upsert({users: users},
                 {
                     $set: {
                         //convoName: convoName,
@@ -36,6 +41,7 @@ Meteor.methods({
                             userId: Meteor.userId(),
                             text: data,
                             deleted: false,
+                            explosive: false,
                             createdAt: Date.now()
                         }
                     }
@@ -44,12 +50,13 @@ Meteor.methods({
     },
 
     'comment.create'(postId, comment){
-        const userId = Feed.findOne({_id:postId},{fields: {userId: 1}}).userId;
+        /*const userId = Feed.findOne({_id:postId},{fields: {userId: 1}}).userId;
         const name = Meteor.users.findOne({_id:userId},{fields: {firstName: 1}}).firstName;
-        const title = name + "commented on your post";
+        const title = name + "commented on your post"; */
+
         Comments.insert({postId:postId, userId: Meteor.userId(), comment: comment, replies: []});
-        console.log("Notification user set: " + userId);
-        Meteor.call('server.push',title,comment,userId);
+        /*console.log("Notification user set: " + userId);
+        Meteor.call('server.push',title,comment,userId); */
     },
 
     'comment.reply'(postId, commentId, comment){
@@ -66,17 +73,19 @@ Meteor.methods({
         if(id2){
             const users = [id1,id2];
 
-            Convos.upsert({users: users, type: "destructive"},
+            Convos.upsert({_id: Random.id(), users: users},
                 {
                     $set: {
-                        prevText: "Self Destructing",
-                        lastActive: new Date(),
+                        prevText: data,
+                        lastActive: new Date()
                     },
                     $push: {
                         messages: {
                             _id: Random.id(),
                             userId: Meteor.userId(),
-                            image: data,
+                            text: data,
+                            deleted: false,
+                            explosive: true,
                             createdAt: Date.now()
                         }
                     }
@@ -217,11 +226,5 @@ Meteor.methods({
             sender: sender,
             receiver: receiver,
         });
-    },
-
-    'scrapeAll'(){
-        scraperAddToFeed('__scraped__TheMindUnleashed');
-        scraperAddToFeed('__scraped__TheAntiMedia');
-        scraperAddToFeed('__scraped__Futurism');
     }
 });

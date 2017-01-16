@@ -5,7 +5,6 @@ import Render from '../../core/components/render.jsx'
 
 const MessageItem = ({data}) => ({
 
-
     handleTap: function(data){
         const dId = ("#d-" + data._id);
         /* const fdId = ("#fd-" + data._id); */

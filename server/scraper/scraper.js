@@ -14,7 +14,13 @@ scraperAddToFeed = (siteId) => {
     case '__scraped__Futurism':
       scrape = scrapeFuturism();
       break;
+    case '__scraped__TorrentFreak':
+      scrape = scrapeTorrentFreak();
+      break;
     default:
+      case '__scraped__Linux':
+      scrape = scrapeLinux();
+      break;
       return;
   }
 

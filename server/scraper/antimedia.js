@@ -2,7 +2,7 @@ import htmlToJson from 'html-to-json';
 import _ from 'lodash';
 
 scrapeTheAntiMedia = () => {
-    return htmlToJson.request('http://theantimedia.org/', {
+    return htmlToJson.request('http://www.youredm.com/', {
 
             'data': ['.recent-post', function ($div) {
                 if ($div.find('img').attr('alt')

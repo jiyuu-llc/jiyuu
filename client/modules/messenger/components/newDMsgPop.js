@@ -5,6 +5,9 @@ import { Meteor } from 'meteor/meteor';
 const NewDMsgPop = () => ({
     dMsg(){
         const un2 = $("#receiverSel2").val();
+
+
+        /*
         var uploader = new Slingshot.Upload("myFileUploads");
 
         uploader.send(document.getElementById('dMsgUpload').files[0], function (error, downloadUrl) {
@@ -18,6 +21,9 @@ const NewDMsgPop = () => ({
                 console.log(downloadUrl);
             }
         });
+        */
+
+        Meteor.call('dmsg.send', Meteor.userId(), un2, $("#newMessage").val());
     },
 
     render() {
@@ -36,6 +42,7 @@ const NewDMsgPop = () => ({
                             </div>
                             <div className="form-group">
                                 Send Message
+                                <input type="text" className="form-control" placeholder="Message" id="newMessage"/>
                             </div>
                         </div>
                         <div className="modal-footer">

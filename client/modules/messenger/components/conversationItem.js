@@ -36,9 +36,14 @@ const ConvoItem = ({data}) => ({
     },
 
     render() {
+        if (data.explosive){
+        }else{
+            var theClass = "no-boom";
+        }
+
         return (
          <Hammer onSwipe={this.handleSwipe.bind(this, data)}>
-          <div className="conversation-item" onClick={this.convoClick.bind(this, data.users)}>
+          <div className={"conversation-item " + theClass} onClick={this.convoClick.bind(this, data.users)}>
             <div className="convoImageContain">
               <img className="convoImage" height="55px" width="55px" src={this.renderPicture(data.users)} />
             </div>

@@ -30,4 +30,4 @@ scrapeTheMindUnleashed = () => {
     }).catch(err => {
       throw new Meteor.Error(err)
     });
-}
+};

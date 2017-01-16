@@ -5,10 +5,9 @@ import { Meteor } from 'meteor/meteor';
 const NewMsgPop = () => ({
 
     convoCreate(){
-      const type = $("#messageType:checked").val() ? true : false;
       const un2 = $("#receiverSel").val();
       const data = $("#message").val();
-      Meteor.call("convo.create",Meteor.userId(),un2, type, data);
+      Meteor.call("convo.create",Meteor.userId(), un2, data);
     },
 
     render() {
@@ -30,9 +29,6 @@ const NewMsgPop = () => ({
                           </div>
                         </div>
                         <div className="modal-footer">
-                            <div className="checkbox">
-                                <label><input type="checkbox" value=""/>Private</label>
-                            </div>
                             <button type="button" className="btn btn-primary" onClick={this.convoCreate.bind(this)} data-dismiss="modal">Send</button>
                             <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
