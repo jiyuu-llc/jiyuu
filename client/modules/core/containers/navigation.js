@@ -4,10 +4,11 @@ import Navigation from '../components/navigation.jsx';
 
 const composer = ( props, onData ) => {
     if (Meteor.user()) {
-        const userColor = Meteor.user().color;
-        onData(null, {userColor});
+        const user = Meteor.user();
+        onData(null, {user});
     } else {
-        onData(null, {userColor: "purpleBar"});
+        const user = "deez nutz";
+        onData(null, {user});
     }
 };
 

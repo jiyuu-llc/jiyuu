@@ -4,8 +4,11 @@ import Settings from '../components/settings.jsx';
 
 const composer = ( props, onData ) => {
     if (Meteor.user()) {
-        const userColor = Meteor.user().color;
-        onData(null, {userColor});
+        const user = Meteor.user();
+        onData(null, {user});
+    } else {
+        const user = "deez nutz";
+        onData(null, {user});
     }
 };
 

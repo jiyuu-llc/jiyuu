@@ -17,7 +17,7 @@ Meteor.publish('connectedUsers', function(requestedIds, requestedUsernames){
         });
         userIds = _.uniq(_.concat(userIds, requestedIds));
         return Meteor.users.findFaster({$or: [{_id: userId}, {_id: {$in: userIds}}, {username: {$in: requestedUsernames}}]},
-            {fields: {_id: 1, username: 1, avatar: 1, cover: 1, firstName: 1, lastName: 1, color: 1}});
+            {fields: {_id: 1, username: 1, avatar: 1, cover: 1, firstName: 1, lastName: 1, color: 1, navPosition: 1}});
     });
 });
 

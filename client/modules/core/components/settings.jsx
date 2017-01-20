@@ -2,6 +2,7 @@ import React from 'react';
 
 const updateInfo = () => {
     var color = $( "select#registerColor option:selected").val() || false;
+    var navPosition = $( "select#navPosition option:selected").val() || false;
     var password1 = $("#password1").val();
     var password2 = $("#password2").val();
     var password3 = $("#password3").val();
@@ -20,6 +21,9 @@ const updateInfo = () => {
         }
     }
 
+    if(navPosition){
+        Meteor.call("changeNav", navPosition);
+    }
 };
 
 const clickLogOut = () => {
@@ -28,7 +32,7 @@ const clickLogOut = () => {
     });
 };
 
-const Settings = ({userColor}) => (
+const Settings = ({user}) => (
       <div className="settings-card-contain">
         <div id="settings-card" className="card">
             <div className="card-block">
@@ -36,7 +40,7 @@ const Settings = ({userColor}) => (
                         <div className="form-group">
                             <label className="col-lg-12 control-label">Theme</label>
                             <div className="col-lg-12">
-                                <select defaultValue={userColor} className="form-control" id="registerColor">
+                                <select defaultValue={user.color} className="form-control" id="registerColor">
                                     <option value="purpleBar">jiyuu</option>
                                     <option value="blueBar">Blue</option>
                                     <option value="redBar">Red</option>
@@ -48,22 +52,33 @@ const Settings = ({userColor}) => (
                                 </select>
                             </div>
                         </div>
+                    <div className="form-group">
+                        <label className="col-lg-12 control-label">Navbar Position</label>
+                        <div className="col-lg-12">
+                            <select defaultValue={user.navPosition} className="form-control" id="navPosition">
+                                <option value="topNav">Top</option>
+                                <option value="leftNav">Left</option>
+                                <option value="rightNav">Right</option>
+                                <option value="bottomNav">Bottom</option>
+                            </select>
+                        </div>
+                    </div>
                         <div className="form-group">
                             <label className="col-md-12 control-label">Current Password:</label>
                             <div className="col-md-12">
-                                <input id="password1"className="form-control" type="password" name="oldPasswordVar"/>
+                                <input id="password1" className="form-control" type="password" name="oldPasswordVar"/>
                             </div>
                         </div>
                         <div className="form-group">
                             <label className="col-md-12 control-label">New Password:</label>
                             <div className="col-md-12">
-                                <input id="password2"className="form-control" type="password" name="newPasswordVar"/>
+                                <input id="password2" className="form-control" type="password" name="newPasswordVar"/>
                             </div>
                         </div>
                         <div className="form-group">
                             <label className="col-md-12 control-label">Confirm password:</label>
                             <div className="col-md-12">
-                                <input id="password3"className="form-control" type="password" name="confirmPasswordVar"/>
+                                <input id="password3" className="form-control" type="password" name="confirmPasswordVar"/>
                             </div>
                         </div>
                         <div className="form-group">

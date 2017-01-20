@@ -4,12 +4,54 @@
     display: none;
 }
 
-#nav-contain{
+#topNav{
     position: fixed;
     z-index: 200;
     top:0;
     width: 100%;
 }
+
+#bottomNav{
+    position: fixed;
+    z-index: 200;
+    bottom:0;
+    width: 100%;
+}
+
+
+#leftNav{
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left:0;
+    height: 100%;
+}
+
+#rightNav{
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right:0;
+    height: 100%;
+}
+
+#leftNav nav{
+    flex-direction: column;
+}
+
+#leftNav nav div{
+    margin: 20px 0;
+}
+
+
+#rightNav nav{
+    flex-direction: column;
+}
+
+#rightNav nav div{
+    margin: 20px 0;
+}
+
 
 
 .purpleBar{

@@ -46,41 +46,40 @@ const messageListHide = () => {
     $(".messenger-title-bar").removeClass("card-bottom");
 };
 
-const Navigation = ({userColor}) => (
-       <div id="nav-contain" className={userColor} onClick={messageListHide.bind(this)}>
+const Navigation = ({user}) => (
+       <div id={user.navPosition || "topNav"} className={user.color} onClick={messageListHide.bind(this)}>
         <nav className="navbar navbar-jiyuu">
-            <div className={"navbar-toggler " + userColor + "-btn"} type="button" onClick={homeClick.bind(this)}>
+            <div className={"navbar-toggler " + user.color + "-btn"} type="button" onClick={homeClick.bind(this)}>
                 <i className="fa fa-home" aria-hidden="true"/>
             </div>
-            <div className={"navbar-toggler " + userColor + "-btn"} type="button" onClick={newPostToggle.bind(this)}data-toggle="collapse" data-target="#">
+            <div className={"navbar-toggler " + user.color + "-btn"} type="button" onClick={newPostToggle.bind(this)}data-toggle="collapse" data-target="#">
                 <i className="fa fa-pencil" aria-hidden="true"/>
             </div>
-            <div className={"navbar-toggler " + userColor + "-btn"} type="button" onClick={messageClick.bind(this)}>
+            <div className={"navbar-toggler " + user.color + "-btn"} type="button" onClick={messageClick.bind(this)}>
                 <i className="fa fa-envelope" aria-hidden="true"/>
             </div>
-            <div className={"navbar-toggler " + userColor + "-btn"} type="button" onClick={searchClick.bind(this)} data-toggle="collapse" data-target="#searchContain">
+            <div className={"navbar-toggler " + user.color + "-btn"} type="button" onClick={searchClick.bind(this)} data-toggle="collapse" data-target="#searchContain">
                 <i className="fa fa-search" aria-hidden="true"/>
             </div>
-            <div className={"navbar-toggler " + userColor + "-btn"} type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+            <div className={"navbar-toggler " + user.color + "-btn"} type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                 <i className="fa fa-bars" aria-hidden="true"/>
             </div>
         </nav>
            <div className="collapse" id="exCollapsingNavbar">
                <div id="button-drawer" className="bg-inverse p-a-1">
-                   <div className={"navbar-toggler " + userColor + "-btn"} type="button" onClick={connectClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
+                   <div className={"navbar-toggler " + user.color + "-btn"} type="button" onClick={connectClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
                        <i className="fa fa-connectdevelop" aria-hidden="true"/>
                    </div>
-
-                   <div className={"navbar-toggler " + userColor + "-btn"} type="button" onClick={questionClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
+                   <div className={"navbar-toggler " + user.color + "-btn"} type="button" onClick={questionClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
                        <i className="fa fa-question" aria-hidden="true"/>
                    </div>
-                   <div className={"navbar-toggler " + userColor + "-btn"} type="button" onClick={profileClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
+                   <div className={"navbar-toggler " + user.color + "-btn"} type="button" onClick={profileClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
                        <i className="fa fa-user" aria-hidden="true"/>
                    </div>
-                   <div className={"navbar-toggler " + userColor + "-btn"} type="button" onClick={cogClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
+                   <div className={"navbar-toggler " + user.color + "-btn"} type="button" onClick={cogClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
                        <i className="fa fa-cog" aria-hidden="true"/>
                    </div>
-                   <div className={"navbar-toggler " + userColor + "-btn"} type="button" onClick={notifiClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
+                   <div className={"navbar-toggler " + user.color + "-btn"} type="button" onClick={notifiClick.bind(this)} data-toggle="collapse" data-target="#exCollapsingNavbar">
                        <i className="fa fa-bell" aria-hidden="true"/>
                    </div>
                </div>

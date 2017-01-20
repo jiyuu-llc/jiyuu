@@ -10,6 +10,22 @@ body {
   height: calc(100vh - 62px);
 }
 
+
+#pc-topNav{
+    margin-top: 62px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: calc(100vh - 62px);
+}
+
+#pc-leftNav{
+    margin-left: 62px;
+    margin-right: 0;
+    width: calc(100vw - 62px);
+    height: 100vh;
+}
+
 .new-post{
     resize: none;
 }

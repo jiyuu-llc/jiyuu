@@ -10,7 +10,7 @@ Meteor.methods({
     },
 
     'convo.delayedDelete'(id){
-        Meteor.setTimeout(function(){Convos.remove({_id:id});}, 10000);
+        Meteor.setTimeout(function(){Convos.remove({_id:id});}, 30000);
         console.log("woooooo!")
     },
 
@@ -57,6 +57,10 @@ Meteor.methods({
         Comments.insert({postId:postId, userId: Meteor.userId(), comment: comment, replies: []});
         /*console.log("Notification user set: " + userId);
         Meteor.call('server.push',title,comment,userId); */
+    },
+
+    'comment.delete'(id){
+        Comments.remove({_id: id});
     },
 
     'comment.reply'(postId, commentId, comment){
@@ -213,6 +217,10 @@ Meteor.methods({
 
     'changeColor'(color){
         Meteor.users.update({_id: Meteor.userId()}, {$set: {color: color}});
+    },
+
+    'changeNav'(position){
+        Meteor.users.update({_id: Meteor.userId()}, {$set: {navPosition: position}});
     },
 
     'updateCoverPic'(url){
