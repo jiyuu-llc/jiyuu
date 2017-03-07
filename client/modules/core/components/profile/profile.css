@@ -231,9 +231,21 @@
     color: red;
 }
 
+
+
+#profileLeft{
+    display: inline-block;
+}
+
+.profileRight{
+    display: inline-block;
+    padding: 0 !important;
+}
+
 @media screen and (max-width: 768px) {
 
     .profileRight{
+        display: block;
         padding: 0 !important;
     }
 

@@ -7,7 +7,10 @@ const composer = ( props, onData ) => {
         const user = Meteor.user();
         onData(null, {user});
     } else {
-        const user = "deez nutz";
+        const user = {
+            color: "purpleBar",
+            navPosition: "topNav"
+        };
         onData(null, {user});
     }
 };

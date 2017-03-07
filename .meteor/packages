@@ -35,8 +35,6 @@ peerlibrary:subscription-data
 orgztion:meteor-global-tether
 peerlibrary:aws-sdk
 raix:push
-mrgalaxy:stripe
 shell-server@0.2.1
 fastclick
 mobile-status-bar
-meteorhacks:fast-render

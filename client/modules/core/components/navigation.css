@@ -19,6 +19,14 @@
 }
 
 
+.jyuuBar{
+    position: relative;
+    display: flex;
+    padding: 0.5rem 1rem;
+}
+
+
+
 #leftNav{
     position: fixed;
     z-index: 200;
@@ -45,13 +53,17 @@
 
 
 #rightNav nav{
-    flex-direction: column;
+    flex-direction: column !important;
 }
 
 #rightNav nav div{
     margin: 20px 0;
 }
 
+
+.navbar-toggler{
+    border-radius: 50% !important;
+}
 
 
 .purpleBar{
@@ -170,7 +182,9 @@
 .navbar{
     display: flex;
     color: #ffffff;
+    flex-direction: row;
 }
+
 
 .navButton{
     background-color: #721fbd !important;
@@ -182,15 +196,51 @@
     cursor: pointer;
 }
 
-.navbar-jiyuu{
+.navbar-jiyuu-topNav, .navbar-jiyuu-bottomNav{
+    flex-direction: row !important;
     justify-content: space-between;
 }
 
-#button-drawer{
-    display: flex;
+.navbar-jiyuu-leftNav, .navbar-jiyuu-rightNav{
+    flex-direction: column;
     justify-content: space-between;
 }
+
+.extend-jiyuu-leftNav, .extend-jiyuu-rightNav{
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.extend-jiyuu-topNav, .extend-jiyuu-Nav{
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#button-drawer-topNav, #button-drawer-bottomNav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#button-drawer-leftNav, #button-drawer-rightNav{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#button-drawer-leftNav div, #button-drawer-leftNav div{
+    margin: 10px auto;
+}
+
 
 #newPostContain{
     margin: 0 50px 0 50px;
+}
+
+
+.navToggle{
+    background-color: #721fbd !important;
 }
