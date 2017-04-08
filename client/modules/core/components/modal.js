@@ -66,7 +66,7 @@ const Modal = ({connections}) => ({
                         <div className="modal-body">
                             <textarea className="form-control new-post" rows="5" id="postValue"/>
                         </div>
-                        <div className="modal-footer">
+                        <div className="modal-options">
                             {renderConnections(connections)}
                             <label>
                               <input type="checkbox" name="public" defaultChecked/>&nbsp;Public

@@ -25,8 +25,9 @@ import Questions from '../jiyuu/components/jiyuu.js';
 import AccountType from './components/signup/accountType.js';
 import Interests from './components/signup/interests.js';
 import Admin from './components/admin.jsx';
-import Call from './components/call.jsx';
-import Requests from './components/requests.jsx';
+import VideoTest from '../messenger/containers/videoTest';
+import Chat from '../messenger/components/chat';
+import RequestList from './components/requests.jsx';
 
 export default function (injectDeps, {FlowRouter}) {
     const MainLayoutCtx = injectDeps(MainLayout);
@@ -123,7 +124,7 @@ export default function (injectDeps, {FlowRouter}) {
             }
 
             mount(MainLayoutCtx, {
-                content: () => (<Requests/>)
+                content: () => (<RequestList/>)
             });
         }
     });
@@ -357,13 +358,25 @@ export default function (injectDeps, {FlowRouter}) {
         }
     });
 
+    FlowRouter.route('/room/:id', {
+        name: 'peerId',
+        action() {
+            mount(MainLayoutCtx, {
+                content: () => (<Chat />)
+            });
+        }
+    });
+
 
     FlowRouter.route('/call', {
         name: 'call',
         action() {
-            mount(MainLayoutCtx, {
-                content: () => (<Call />)
-            });
+            if (Meteor.userId()) {
+                mount(MainLayoutCtx, {
+                    content: () => (<VideoTest />)
+                });
+            }
         }
     });
+
 }

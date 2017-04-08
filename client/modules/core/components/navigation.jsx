@@ -46,9 +46,7 @@ const messageListHide = () => {
     $(".messenger-title-bar").removeClass("card-bottom");
 };
 
-const Navigation = ({user}) => ({
-    render(){
-        return(
+const Navigation = ({user}) => (
             <div id={user.navPosition} className={user.color} onClick={messageListHide.bind(this)}>
                 <nav className={"navbar navbar-jiyuu-" + user.navPosition}>
                     <div className={"navbar-toggler " + user.color + "-btn"} onClick={homeClick.bind(this)}>
@@ -88,10 +86,6 @@ const Navigation = ({user}) => ({
                 </div>
                 <Search/>
             </div>
-        );
-    }
-});
-
-
+);
 
 export default Navigation;

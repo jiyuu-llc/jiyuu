@@ -1,5 +1,5 @@
 import {Meteor} from 'meteor/meteor';
-import {Feed, Convos, Mind, Files, Comments, Notifications, Requests} from '/lib/collections';
+import {Feed, Convos, Mind, Files, Comments, Notifications, Requests, Rooms} from '/lib/collections';
 import {check} from 'meteor/check';
 import {Random} from 'meteor/random';
 import _ from 'lodash';
@@ -227,12 +227,32 @@ Meteor.methods({
         Meteor.users.update({_id: Meteor.userId()}, {$set: {cover:url}});
     },
 
-    'notification.send'(type, text, sender, receiver){
-        Requests.insert({
-            type: type,
-            text: text,
-            sender: sender,
-            receiver: receiver,
+
+    'createRoom'(receiver, roomId){
+        console.log(receiver);
+
+        var receiverUserId = Meteor.users.findOne({username: receiver})._id;
+        var senderUserName = Meteor.users.findOne({_id: Meteor.userId()}).username;
+
+        console.log(receiverUserId);
+        Rooms.insert({
+            roomId: roomId,
+            users: [Meteor.userId(), receiverUserId]
         });
+        Meteor.call("notification.create", receiverUserId, senderUserName, roomId)
+    },
+
+    'notification.create'(receiverId, senderUserName, roomId){
+        Notifications.insert({
+            userId: receiverId,
+            text: senderUserName + " is calling you.",
+            type: "request",
+            token: roomId
+        });
+    },
+
+    'notification.remove'(id){
+        Notifications.remove({_id: id});
     }
+
 });

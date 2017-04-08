@@ -4,6 +4,10 @@ import MessageList from '../containers/messageList.js'
 import NewMsgPop from './newMsgPop.js'
 import NewDMsgPop from './newDMsgPop';
 
+const gotoBetaChat = () =>{
+    window.location.href = "/call";
+};
+
 const sendMsg = () => {
     const text = $("#messageInput").val();
     const convoId = FlowRouter.getParam('convo');
@@ -83,6 +87,7 @@ const Messenger = () => ({
                     </div>
                 </div>
             </div>
+                <div onClick={gotoBetaChat}>Beta Chat</div>
               <NewMsgPop/>
               <NewDMsgPop/>
             </div>

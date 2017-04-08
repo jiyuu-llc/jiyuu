@@ -36,3 +36,19 @@
 .notifiInfoContain{
   padding: 8px 0  0 0;
 }
+
+
+.notification-list{
+    padding: 5px;
+    width: 100%;
+    background-color: lightcyan;
+    min-height: 50px;
+}
+
+.notification-item{
+    border: solid 1px black;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px;
+    min-height: 40px;
+}

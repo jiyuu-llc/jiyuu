@@ -1,7 +1,7 @@
 import htmlToJson from 'html-to-json';
 import _ from 'lodash';
 
-scrapeTorrentFreak = () => {
+scrapeYourEdm = () => {
     return htmlToJson.request('http://www.youredm.com/', {
 
         'data': ['cb-mask', function ($a) {
@@ -11,7 +11,7 @@ scrapeTorrentFreak = () => {
                 && $a.attr('title')) {
                 return {
                     markdown: "<a onClick=\"window.open(\'"
-                    + "https://torrentfreak.com" + $a.attr('href') + "\', \'_blank\')\"/>"
+                    + "http://www.youredm.com/ " + $a.attr('href') + "\', \'_blank\')\"/>"
                     + "<br/><img src='/images/tf.jpg'/></div>"
                     + $a.find('.entry-title').last().text() +"</a>",
                     url: $a.attr('href')
@@ -21,7 +21,7 @@ scrapeTorrentFreak = () => {
     }).then(function(result){
 
         var obj = {};
-        obj['siteId'] = "__scraped__TorrentFreak";
+        obj['siteId'] = "__scraped__YourEdm";
         obj['data'] = _.uniqWith(_.compact(result.data), _.isEqual).reverse();
         obj['urls'] = [];
         for (var i = 0; i < obj.data.length; i++){

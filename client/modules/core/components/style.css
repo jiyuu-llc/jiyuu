@@ -30,6 +30,11 @@ body {
     resize: none;
 }
 
+.modal-option{
+    display: block;
+    overflow: hidden;
+}
+
 label {
   margin-right: 10px;
 }

@@ -17,11 +17,16 @@ Meteor.methods({
     scraperAddToFeed('__scraped__Linux');
     console.log("scraped");
   },
+  'scrape.youredm': () => {
+    scraperAddToFeed('__scraped__Linux');
+    console.log("scraped");
+  },
   'scrapeAll'(){
     scraperAddToFeed('__scraped__TheMindUnleashed');
     scraperAddToFeed('__scraped__TheAntiMedia');
     scraperAddToFeed('__scraped__Futurism');
     scraperAddToFeed('__scraped__TorrentFreak');
     scraperAddToFeed('__scraped__Linux');
+    scraperAddToFeed('__scraped__YourEdm');
   }
 });

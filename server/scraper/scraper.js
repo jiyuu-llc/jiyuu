@@ -17,8 +17,10 @@ scraperAddToFeed = (siteId) => {
     case '__scraped__TorrentFreak':
       scrape = scrapeTorrentFreak();
       break;
-    default:
-      case '__scraped__Linux':
+    case '__scraped__YourEdm':
+      scrape = scrapeYourEdm();
+      break;
+    case '__scraped__Linux':
       scrape = scrapeLinux();
       break;
       return;

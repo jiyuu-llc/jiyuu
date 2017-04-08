@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Requests = () => ({
+const RequestList = () => ({
     render() {
         return (
             <div>
@@ -17,7 +17,9 @@ const Requests = () => ({
                         </div>
                         <div className="notifiInfoContain">
                             <div className="notifiInfo">
-                                Alec Wantoch has sent you a connection request.
+                                Alec Wantoch - connection request.
+                                <div>Accept</div>
+                                <div>Decline</div>
                             </div>
                         </div>
                     </div>
@@ -27,4 +29,4 @@ const Requests = () => ({
     }
 });
 
-export default Requests;
+export default RequestList;
