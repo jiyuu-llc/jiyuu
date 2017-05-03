@@ -77,7 +77,7 @@ const renderIfData = (post) => {
                         <p id={"p-" + post._id} className="postBody" dangerouslySetInnerHTML={{__html: post.content}} />
                     </Hammer>
                 <Hammer onTap={picTap.bind(this, post)}>
-                    <Render data={post}/>
+                    <Render data={post.content}/>
                 </Hammer>
                     <button style={{display:"none"}} id={"s-" + post._id} onClick={savePost.bind(this, post)} className="btn btn-primary-outline">Save</button>
                 <div className="card-block post-interact">
