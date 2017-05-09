@@ -1,5 +1,4 @@
 import React from 'react';
-import EmbedJS from 'embed-js';
 
 const renderIfData = (data) => {
     switch (data.dataType) {
@@ -31,24 +30,13 @@ const renderIfData = (data) => {
 };
 
 
-const renderIfText = (data) =>{
-    var x = new EmbedJS({
-        input: data
-    });
-    return x.render();
-};
-
 const Render = ({data}) => ({
     render(){
         return(
             <div id={"render-" + data._id} className="render-c">
-                {renderIfData(data) || renderIfText(data)}
+                {renderIfData(data)}
             </div>
         )
-    },
-
-    componentDidMount(){
-
     }
 });
 export default Render;
