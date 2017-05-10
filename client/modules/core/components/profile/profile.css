@@ -231,10 +231,16 @@
     color: red;
 }
 
-
+#profile-filler{
+    height: 100vh;
+    margin-right: 20px;
+    display: inline-flex;
+}
 
 #profileLeft{
     display: inline-block;
+    position: fixed;
+    top: 70px;
 }
 
 .profileRight{

@@ -9,15 +9,17 @@ const Profile = () => ({
   render() {
     return (
       <div className="container profile-container">
-                  <ProfileSidebar/>
-        <div className="col-md-9 profileRight">
-          <ProfileOverview />
-          <div id="profileMain" className="col-xs-12">
-            <ProfileButtonsBar />
-            <br/>
-            <List />
-          </div>
-        </div>
+                <ProfileSidebar/>
+                <div id="profile-filler" className="col-md-3 hidden-sm-down">
+                </div>
+                <div className="col-md-8 profileRight">
+                  <ProfileOverview />
+                  <div id="profileMain" className="col-xs-12">
+                    <ProfileButtonsBar />
+                    <br/>
+                    <List />
+                  </div>
+                </div>
       </div>
     );
   }

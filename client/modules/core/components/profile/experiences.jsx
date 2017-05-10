@@ -21,6 +21,8 @@ const renderIfData = ( files ) => {
 const Experiences = ( { files } ) => (
     <div className="container profile-container">
         <ProfileSidebar/>
+        <div id="profile-filler" className="col-md-3 hidden-sm-down">
+        </div>
         <div className="col-md-9">
           <div id="gallery-contain">
               { renderIfData( files ) }
