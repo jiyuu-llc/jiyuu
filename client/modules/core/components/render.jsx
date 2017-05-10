@@ -5,20 +5,20 @@ const renderIfData = (data) => {
         case "image/gif":
         case "image/png":
         case "image/jpeg":
-            return <img className="msg-pic" src={data.data}/>;
+            return <img id={"img-" + data._id} className="msg-pic" src={data.data}/>;
             break;
         case "application/zip":
         case "application/x-compressed":
-            return <a href={data.data}>Zip file</a>;
+            return <a id={"zip-" + data._id} href={data.data}>Zip file</a>;
             break;
         case "video/mp4":
-            return <video controls>
+            return <video id={"vid-" + data._id} controls>
                 <source src={data.data} type="video/mp4"/>
                 Your browser does not support the video tag.
             </video>;
             break;
         case "video/quicktime":
-            return <video controls>
+            return <video id={"vid-" + data._id} controls>
                 <source src={data.data} type="video/quicktime"/>
                         Your browser does not support the video tag.
             </video>;

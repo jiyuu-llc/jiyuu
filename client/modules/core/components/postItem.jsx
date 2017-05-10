@@ -50,7 +50,7 @@ const commentSubmit = (post) =>{
 };
 
 const picTap = (post) =>{
-    var renderId = "#render-" + post._id;
+    var renderId = "#img-" + post._id;
     $(renderId).toggleClass("r-expanded");
 };
 

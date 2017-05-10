@@ -73,9 +73,9 @@ label {
 
 .r-expanded{
   position: fixed;
-  z-index: 999;
-  min-height: 100%;
-  min-width: 100%;
+  z-index: 9999;
+  min-height: 80vh;
+  min-width: 80vw;
 }
 
 .user-rm{
