@@ -32,22 +32,21 @@ const savePost = (post) => {
 };
 
 const commentClick = (post) =>{
-    const btnId = "#cmt" + post._id;
-    const voteId = "#vote-" + post._id;
-    console.log("clicked");
-    $(btnId).show();
-    $(voteId).hide();
+    var btnId = "#cmt-" + post._id;
+    var voteId = "#vote-" + post._id;
+     $(btnId).show();
+     $(voteId).hide();
 };
 
 const commentClickOff = (post) =>{
-    const voteId = "#vote-" + post._id;
-    $(voteId).show();
+        var voteId = "#vote-" + post._id;
+        $(voteId).show();
 };
 
 const commentSubmit = (post) => {
     const postId = post._id;
     const inputId = "#cmtd" + postId;
-    const btnId = "#cmt" + postId;
+    const btnId = "#cmt-" + postId;
     const comment = $(inputId).val();
     Meteor.call("comment.create",postId, comment, function(error, result){
         commentClickOff(post);
@@ -96,7 +95,7 @@ const renderIfData = (post) => {
                 </Hammer>
                     <button style={{display:"none"}} id={"s-" + post._id} onClick={savePost.bind(this, post)} className="btn btn-primary-outline">Save</button>
                 <div className="card-block post-interact">
-                    <div id="id-vote" className="voteButtons">
+                    <div id={"vote-" + post._id} className="voteButtons">
                         <button type="button" onClick={react.bind(this, post._id, 'like')} className="btn btn-danger voteButton">
                             {reactionCount(post.reactions, 'like')} <i className="fa fa-thumbs-o-up" aria-hidden="true"/>
                         </button>
@@ -108,7 +107,7 @@ const renderIfData = (post) => {
                         </button>
                     </div>
                     <input id={"cmtd" + post._id} type="text" onClick={commentClick.bind(this, post)} onBlur={commentClickOff.bind(this, post)} className="form-control commentInput" placeholder="Reply"/>
-                    <button id={"cmt" + post._id} type="button" onClick={commentSubmit.bind(this, post)} className="commentBtn">
+                    <button id={"cmt-" + post._id} type="button" onClick={commentSubmit.bind(this, post)} className="commentBtn">
                         <i className="fa fa-comment-o" aria-hidden="true"/>
                     </button>
                 </div>

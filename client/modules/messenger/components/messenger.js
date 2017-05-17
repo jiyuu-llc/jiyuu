@@ -87,7 +87,6 @@ const Messenger = () => ({
                     </div>
                 </div>
             </div>
-                <div onClick={gotoBetaChat}>Beta Chat</div>
               <NewMsgPop/>
               <NewDMsgPop/>
             </div>

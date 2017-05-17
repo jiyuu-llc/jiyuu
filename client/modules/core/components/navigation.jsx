@@ -10,6 +10,7 @@ const newPostToggle = () => {
 };
 
 const searchClick = () => {
+    $('.searchResults').show();
     $('#searchInput').focus();
 };
 

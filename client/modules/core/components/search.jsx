@@ -26,22 +26,24 @@ const handleSearch = (users, feed) => {
 	
 };
 
-const setSearchResults = (users, feed) => {
+const setSearchResults = (users) => {
 	var searchValue = $('input#searchInput').val();
 	var results = [];
 
 	results.push(
-		{_id: "12346", resultType: "user", result: "Alec Wantoch"}
+		{_id: "12346", resultType: "user", result: "Alec Wantoch"},
+		{_id: "12344", resultType: "user", result: "Zachary Pelkey"},
+		{_id: "12345", resultType: "user", result: "Trevor Jacoby"}
 	);
 
 	Session.set('searchResults', results);
 };
 
-const renderSearchResults = (searchResults) => {
-	if (searchResults) {
-		return searchResults.map((o)=>{
+const renderSearchResults = (users) => {
+	if (users) {
+		return users.map((o)=>{
 			return (
-				<div key={o._id}>{o.result}</div>
+				<a href={"/profile/" + o.username}><div className="search-item" key={o._id}>{o.firstName + " " + o.lastName}</div></a>
 			)
 		});
 	}
@@ -50,11 +52,11 @@ const renderSearchResults = (searchResults) => {
 const Search = ({searchResults, users, feed}) => (
 	<div className="collapse" id="searchContain">
 		<div id="searchBar" className="bg-inverse p-a-1">
-			<input type="text" className="form-control" id="searchInput" onChange={handleSearch.bind(this, users, feed)} onBlur={closeSearch.bind(this)} placeholder="Search"/>
+			<input type="text" className="form-control" id="searchInput" onChange={handleSearch.bind(this, users, feed)} onBlur={closeSearch} placeholder="Search"/>
 		</div>
-
-		{renderSearchResults(searchResults)}
-
+		<div className="searchResults">
+			{renderSearchResults(users)}
+		</div>
     </div>
 );
 
