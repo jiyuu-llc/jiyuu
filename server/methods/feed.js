@@ -38,6 +38,11 @@ Meteor.methods({
       } else {
           console.log("Not your post!");
       }
+    },
+
+    'feed.react'(postId, reaction) {
+        Feed.update({_id: postId}, {$pull: {reactions: {userId: Meteor.userId()}}});
+        Feed.update({_id: postId}, {$addToSet: {reactions: {userId: Meteor.userId(), reaction: reaction}}});
     }
 
 });
