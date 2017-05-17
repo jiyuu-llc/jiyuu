@@ -31,23 +31,29 @@ const savePost = (post) => {
     Meteor.call('post.update', post._id, Meteor.userId(), newContent);
 };
 
-const commentClick = (post) => {
-const btnId = "#cmt" + post._id;
-$(btnId).css('display', 'inline-flex');
+const commentClick = (post) =>{
+    const btnId = "#cmt" + post._id;
+    const voteId = "#vote-" + post._id;
+    console.log("clicked");
+    $(btnId).show();
+    $(voteId).hide();
 };
 
-const commentClickOff = (post) => {
-    const btnId = "#cmt" + post._id;
-    $(btnId).css('display', 'none');
+const commentClickOff = (post) =>{
+    const voteId = "#vote-" + post._id;
+    $(voteId).show();
 };
 
 const commentSubmit = (post) => {
     const postId = post._id;
-    const btnId = "#cmtd" + postId;
-    const comment = $(btnId).val();
-    Meteor.call("comment.create", postId, comment, function(error, result) {
+    const inputId = "#cmtd" + postId;
+    const btnId = "#cmt" + postId;
+    const comment = $(inputId).val();
+    Meteor.call("comment.create",postId, comment, function(error, result){
         commentClickOff(post);
     });
+    $(btnId).hide();
+    $(inputId).val("");
 };
 
 const picTap = (post) => {
@@ -101,7 +107,7 @@ const renderIfData = (post) => {
                             {reactionCount(post.reactions, 'dislike')} <i className="fa fa-thumbs-o-down"/>
                         </button>
                     </div>
-                    <input id={"cmtd" + post._id} type="text" onClick={commentClick.bind(this, post)} className="form-control commentInput" placeholder="Reply"/>
+                    <input id={"cmtd" + post._id} type="text" onClick={commentClick.bind(this, post)} onBlur={commentClickOff.bind(this, post)} className="form-control commentInput" placeholder="Reply"/>
                     <button id={"cmt" + post._id} type="button" onClick={commentSubmit.bind(this, post)} className="commentBtn">
                         <i className="fa fa-comment-o" aria-hidden="true"/>
                     </button>

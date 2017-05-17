@@ -71,6 +71,7 @@
 }
 
 .purpleBar-btn{
+    color: white !important;
     background-color: #721fbd !important;
     border-radius: 50% !important;
     display: inline-flex;
@@ -85,6 +86,7 @@
 }
 
 .blueBar-btn{
+    color: white;
     background-color: #1922bd !important;
     border-radius: 50% !important;
     display: inline-flex;
@@ -99,6 +101,7 @@
 }
 
 .greenBar-btn{
+    color: white;
     background-color: #33bc40 !important;
     border-radius: 50% !important;
     display: inline-flex;
@@ -113,6 +116,7 @@
 }
 
 .redBar-btn{
+    color: white;
     background-color: #bd383b !important;
     border-radius: 50% !important;
     display: inline-flex;
@@ -127,6 +131,7 @@
 }
 
 .yellowBar-btn{
+    color: white !important;
     background-color: #d8db10 !important;
     border-radius: 50% !important;
     display: inline-flex;
@@ -141,6 +146,7 @@
 }
 
 .pinkBar-btn{
+    color: white !important;
     background-color: #da5d99 !important;
     border-radius: 50% !important;
     display: inline-flex;
@@ -155,6 +161,7 @@
 }
 
 .blackBar-btn{
+    color: white !important;
     background-color: #721fbd !important;
     border-radius: 50% !important;
     display: inline-flex;
