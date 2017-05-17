@@ -1,7 +1,7 @@
 import React from 'react';
 import ResolveUsers from '../containers/connectedUsers.js';
 import Navigation from '../containers/navigation.js';
-import Modal from '../containers/modal.js';
+import DynamicRender from '../containers/DynamicRender.js';
 /* import jPop from '../../../pops'; */
 
 const Paginator = () => ({
@@ -55,7 +55,7 @@ const Layout = ({ content }) => (
                 <div id="page-content">
                     {content()}
                 </div>
-                <Modal />
+                <DynamicRender />
                 <Paginator />
             </div>
 );

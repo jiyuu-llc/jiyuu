@@ -14,7 +14,7 @@ const renderConnections = (connections) => {
     }
 };
 
-const Modal = ({connections}) => ({
+const DynamicRender = ({connections}) => ({
 
 
     newPost(){
@@ -83,4 +83,4 @@ const Modal = ({connections}) => ({
     }
 });
 
-export default Modal;
+export default DynamicRender;

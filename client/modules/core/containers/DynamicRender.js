@@ -1,7 +1,7 @@
 import React from 'react';
 import { composeWithTracker } from 'react-komposer';
 import { Connections } from '/lib/collections';
-import Modal from '../components/modal.js';
+import DynamicRender from '../components/DynamicRender.js';
 
 const composer = ( props, onData ) => {
     if (subsManager.subscribe('connections').ready()
@@ -16,4 +16,4 @@ const composer = ( props, onData ) => {
 
 };
 
-export default composeWithTracker(composer)(Modal);
+export default composeWithTracker(composer)(DynamicRender);

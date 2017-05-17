@@ -32,21 +32,27 @@ const savePost = (post) => {
 
 const commentClick = (post) =>{
     var btnId = "#cmt" + post._id;
-    $(btnId).css('display','inline-flex');
+    var voteId = "#vote-" + post._id;
+    console.log("clicked");
+    $(btnId).show();
+    $(voteId).hide();
 };
 
 const commentClickOff = (post) =>{
-    var btnId = "#cmt" + post._id;
-    $(btnId).css('display','none');
+    var voteId = "#vote-" + post._id;
+    $(voteId).show();
 };
 
 const commentSubmit = (post) =>{
     const postId = post._id;
-    const btnId = "#cmtd" + postId;
-    const comment = $(btnId).val();
+    const inputId = "#cmtd" + postId;
+    const btnId = "#cmt" + postId;
+    const comment = $(inputId).val();
     Meteor.call("comment.create",postId, comment, function(error, result){
         commentClickOff(post);
     });
+    $(btnId).hide();
+    $(inputId).val("");
 };
 
 const picTap = (post) =>{
@@ -81,7 +87,7 @@ const renderIfData = (post) => {
                 </Hammer>
                     <button style={{display:"none"}} id={"s-" + post._id} onClick={savePost.bind(this, post)} className="btn btn-primary-outline">Save</button>
                 <div className="card-block post-interact">
-                    <div id="id-vote" className="voteButtons">
+                    <div id={"vote-" + post._id} className="voteButtons">
                         <button type="button" className="btn btn-danger voteButton"><i className="fa fa-thumbs-o-up" aria-hidden="true"/></button>
                         <button type="button" className="btn btn-info voteButton"><i className="fa fa-heart" aria-hidden="true"/>
                         </button>
@@ -89,7 +95,7 @@ const renderIfData = (post) => {
                             <i className="fa fa-thumbs-o-down"/>
                         </button>
                     </div>
-                    <input id={"cmtd" + post._id} type="text" onClick={commentClick.bind(this, post)} className="form-control commentInput" placeholder="Reply"/>
+                    <input id={"cmtd" + post._id} type="text" onClick={commentClick.bind(this, post)} onBlur={commentClickOff.bind(this, post)} className="form-control commentInput" placeholder="Reply"/>
                     <button id={"cmt" + post._id} type="button" onClick={commentSubmit.bind(this, post)} className="commentBtn"><i className="fa fa-comment-o" aria-hidden="true"/></button>
                 </div>
                 <CommentsList data={post._id}/>

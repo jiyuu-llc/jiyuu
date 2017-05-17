@@ -181,6 +181,7 @@
 }
 
 .profile-container{
+    display: flex !important;
     overflow: hidden;
 }
 
@@ -241,11 +242,20 @@
     display: inline-block;
     position: fixed;
     top: 70px;
+    max-width: 250px;
 }
 
 .profileRight{
     display: inline-block;
     padding: 0 !important;
+}
+
+
+#profile-filler-2{
+    display: inline-flex;
+    min-width: 250px;
+    width: 30%;
+    height: 100%;
 }
 
 @media screen and (max-width: 768px) {
