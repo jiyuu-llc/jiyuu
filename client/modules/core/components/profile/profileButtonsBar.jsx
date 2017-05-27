@@ -27,13 +27,13 @@ const ProfileButtonsBar = () => ({
                 <div className="pbutton" onClick={this.galleryClick.bind(this)}>
                   <div className="pb-text">
                     <i className="fa fa-picture-o pb-icon" aria-hidden="true"/>
-                    <p>Gallery</p>
+                    <p>Experiences</p>
                   </div>
                 </div>
                 <div className="pbutton">
                   <div className="pb-text">
                     <i className="fa fa-clone pb-icon" aria-hidden="true"/>
-                    <p>Files</p>
+                    <p>Media</p>
                   </div>
                 </div>
             </div>

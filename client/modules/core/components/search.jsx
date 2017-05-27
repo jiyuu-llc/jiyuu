@@ -43,7 +43,7 @@ const renderSearchResults = (users) => {
 	if (users) {
 		return users.map((o)=>{
 			return (
-				<a href={"/profile/" + o.username}><div className="search-item" key={o._id}>{o.firstName + " " + o.lastName}</div></a>
+				<a key={o._id} href={"/profile/" + o.username}><div className="search-item" key={o._id}>{o.firstName + " " + o.lastName}</div></a>
 			)
 		});
 	}

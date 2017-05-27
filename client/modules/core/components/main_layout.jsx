@@ -47,6 +47,7 @@ const Paginator = () => ({
 	}
 });
 
+
 const Layout = ({ content }) => (
             <div>
                 <ResolveUsers />

@@ -1,0 +1,38 @@
+
+
+.backdrop{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.3);
+    padding: 50px;
+}
+
+.popupModal{
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: 500px;
+    min-height: 300px;
+    margin: 20px auto;
+    padding: 30px;
+    z-index: 9005;
+}
+
+.popupLightBox{
+
+}
+.popupLightBox-img{
+    position: fixed;
+    display: flex;
+    margin: 0 auto;
+    width: 90vw;
+    height: auto;
+    top: 0;
+}
+
+.popupQuestion{
+
+}
+

@@ -1,6 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
-import { Feed, Convos, Messages, Connections, Files, Comments, Notifications} from '/lib/collections';
+import { Feed, Convos, Messages, Connections, Files, Comments, Notifications, Experiences} from '/lib/collections';
 import _ from 'lodash';
 
 Meteor.publish('connectedUsers', function(requestedIds, requestedUsernames){
@@ -128,4 +128,8 @@ Meteor.publish('userList', function() {
 
 Meteor.publish('notifications', function(){
     return Notifications.find();
+});
+
+Meteor.publish('experiences', function(){
+    return Experiences.find();
 });
