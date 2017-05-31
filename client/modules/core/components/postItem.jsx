@@ -74,7 +74,7 @@ const react = (postId, reaction) => {
 };
 
 
-class PostItem extends Component{
+class PostItem extends Component {
 
     constructor(props) {
         super(props);

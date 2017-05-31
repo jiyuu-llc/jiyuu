@@ -38,7 +38,7 @@ class Render extends React.Component {
     render(){
         const {data} = this.props;
         return(
-            <div id={"render-" + this.props.data._id} className="render-c">
+            <div id={"render-" + data._id} className="render-c">
                 {renderIfData(data)}
             </div>
         )
