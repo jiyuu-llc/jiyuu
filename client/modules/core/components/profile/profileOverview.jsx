@@ -93,7 +93,7 @@ class ProfileOverview extends React.Component {
     }
 
     render() {
-        const {user} = this.props;
+        let user = getUserInfo('all', 'username', FlowRouter.getParam('username')) || fakeUser;
         return (
             <div id="flip" className="flip-container">
                 <div className="flipper">

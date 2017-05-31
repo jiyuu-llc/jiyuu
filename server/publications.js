@@ -4,10 +4,10 @@ import { Feed, Convos, Messages, Connections, Files, Comments, Notifications, Ex
 import _ from 'lodash';
 
 Meteor.publish('connectedUsers', function(requestedIds, requestedUsernames){
-    var userId = this.userId;
+    const userId = this.userId;
     if (!requestedUsernames){ requestedUsernames = [] }
     this.autorun(function(){
-        var userIds = [];
+        let userIds = [];
         Connections.findFaster({userId: userId}, {fields: {groups: 1}}).forEach(function(doc){
             doc.groups.forEach(function(doc){
                 _.each(doc.users, function(doc){
@@ -26,9 +26,9 @@ Meteor.publish('connections', function(){
 });
 
 Meteor.publish('mainFeed', function(limit){
-    var userId = this.userId;
-    var userIds = [];
-    var inGroups = [];
+    const userId = this.userId;
+    let userIds = [];
+    let inGroups = [];
 
     this.autorun(function(){
         userIds = [];
@@ -59,10 +59,11 @@ Meteor.publish('mainFeed', function(limit){
 });
 
 Meteor.publish('userFeed', function(username, limit){
-    var inGroups = [];
-    var userId = this.userId;
+    const userId = this.userId;
+    let inGroups = [];
+    let profileId;
     try {
-        var profileId = Meteor.users.findOneFaster({username: username}, {fields: {_id: 1}})._id;
+        profileId = Meteor.users.findOneFaster({username: username}, {fields: {_id: 1}})._id;
     } catch (TypeError) {}
 
     if (profileId === userId) {
