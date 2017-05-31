@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ResolveUsers from '../containers/connectedUsers.js';
 import Navigation from '../containers/navigation.js';
 import DynamicRender from '../containers/DynamicRender.js';
-/* import jPop from '../../../pops'; */
 
 const Paginator = () => ({
 	render(){
@@ -48,17 +47,27 @@ const Paginator = () => ({
 });
 
 
-const Layout = ({ content }) => (
-            <div>
-                <ResolveUsers />
-                <Navigation />
+class Layout extends Component {
 
-                <div id="page-content">
-                    {content()}
-                </div>
-                <DynamicRender />
-                <Paginator />
-            </div>
-);
+	constructor(props) {
+		super(props);
+		this.state = { isModalOpen: false, media: null }
+	}
+
+	render(){
+		return(
+			<div>
+				<ResolveUsers />
+				<Navigation />
+
+				<div id="page-content">
+					{this.props.content()}
+				</div>
+				<DynamicRender />
+				<Paginator />
+			</div>
+		)
+	}
+}
 
 export default Layout;

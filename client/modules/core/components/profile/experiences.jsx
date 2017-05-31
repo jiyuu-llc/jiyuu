@@ -7,8 +7,6 @@ const deleteImage = (file) => {
     Meteor.call('removePhotoData', file.url);
 };
 
-
-
 const test = (object) =>{
     console.log(object);
 };
@@ -17,28 +15,16 @@ class Experiences extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false }
+        this.state = { isModalOpen: false, media: null }
     }
 
-    openModal() {
-        console.log("clicked");
-        this.setState({ isModalOpen: true })
-    }
-
-    closeModal() {
-        this.setState({ isModalOpen: false })
-    }
 
     experienceList(files){
         if ( files && files.length > 0 ) {
             return files.map( ( file ) => {
                 return <div className="gallery-item-c"  key={file._id}>
                     <div onClick={deleteImage.bind(this, file)} className="image-delete fa fa-times" id={file._id}></div>
-                    <img onClick={() => this.openModal()} className="gallery-item" key={file.id} src={file.url}/>
-                    <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-                        <img className="popupLightBox-img" src={file.url}/>
-                        <p><button onClick={() => this.closeModal()}>Close</button></p>
-                    </Modal>
+                    <img onClick={() => this.openModal(file.url)} className="gallery-item" key={file.id} src={file.url}/>
                 </div>
             });
         }
@@ -47,6 +33,10 @@ class Experiences extends Component {
     render(){
         return(
             <div className="profile-container">
+                <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+                    <img className="popupLightBox-img" src={this.state.media}/>
+                    <p><button onClick={() => this.closeModal()}>Close</button></p>
+                </Modal>
                 <ProfileSidebar/>
                 <div id="profile-filler-2" className="hidden-sm-down">
                 </div>
@@ -55,6 +45,16 @@ class Experiences extends Component {
                 </div>
             </div>
         )
+    }
+
+
+    openModal(media) {
+        console.log("clicked");
+        this.setState({ isModalOpen: true, media: media })
+    }
+
+    closeModal() {
+        this.setState({ isModalOpen: false })
     }
 }
 

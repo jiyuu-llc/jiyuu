@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import moment from 'moment';
 import Hammer from 'react-hammerjs';
 import _ from 'lodash';
@@ -56,8 +56,9 @@ const commentSubmit = (post) => {
 };
 
 const picTap = (post) => {
-    const renderId = "#img-" + post._id;
-    $(renderId).toggleClass("r-expanded");
+    /*const renderId = "#img-" + post._id;
+    $(renderId).toggleClass("r-expanded"); */
+
 };
 
 const testClick = () => {
@@ -66,14 +67,22 @@ const testClick = () => {
 
 const reactionCount = (reactions, reaction) => {
     return _.filter(reactions, {reaction: reaction}).length;
-}
+};
 
 const react = (postId, reaction) => {
     Meteor.call('feed.react', postId, reaction);
-}
+};
 
-const renderIfData = (post) => {
-    return (
+
+class PostItem extends Component{
+
+    constructor(props) {
+        super(props);
+        this.state = { isModalOpen: false, media: null }
+    }
+
+    renderIfData(post){
+        return (
             <div className="card">
                 <div className="post-heading">
                     <div className="post-info">
@@ -87,13 +96,13 @@ const renderIfData = (post) => {
                         <i className="fa fa-ellipsis-h options-button" aria-hidden="true"/>
                     </div>
                 </div>
-                    <Hammer onDoubleTap={handleTap.bind(this, post)}>
-                        <p id={"p-" + post._id} className="postBody" dangerouslySetInnerHTML={{__html: post.content}} />
-                    </Hammer>
+                <Hammer onDoubleTap={handleTap.bind(this, post)}>
+                    <p id={"p-" + post._id} className="postBody" dangerouslySetInnerHTML={{__html: post.content}} />
+                </Hammer>
                 <Hammer onTap={picTap.bind(this, post)}>
                     <Render data={post}/>
                 </Hammer>
-                    <button style={{display:"none"}} id={"s-" + post._id} onClick={savePost.bind(this, post)} className="btn btn-primary-outline">Save</button>
+                <button style={{display:"none"}} id={"s-" + post._id} onClick={savePost.bind(this, post)} className="btn btn-primary-outline">Save</button>
                 <div className="card-block post-interact">
                     <div id={"vote-" + post._id} className="voteButtons">
                         <button type="button" onClick={react.bind(this, post._id, 'like')} className="btn btn-danger voteButton">
@@ -113,21 +122,22 @@ const renderIfData = (post) => {
                 </div>
                 <CommentsList data={post._id}/>
             </div>
-    )
-};
+        )
+    };
 
-const PostItem = React.createClass({
     render() {
         const {post} = this.props;
         return (
             <div id={post._id} className="post-item">
-                {renderIfData(post)}
+                {this.renderIfData(post)}
             </div>
         )
-    }/* TODO separate reaction component like comments so this can be enabled again,
+    }
+
+    /* TODO separate reaction component like comments so this can be enabled again,
     shouldComponentUpdate(nextProps, nextState) {
         return this.props.post.createdAt.getUTCMilliseconds() !== nextProps.post.createdAt.getUTCMilliseconds();
     }*/
-});
+}
 
 export default PostItem;
