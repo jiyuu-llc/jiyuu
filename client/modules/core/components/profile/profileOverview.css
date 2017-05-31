@@ -1,5 +1,5 @@
 #flip{
-  margin: 0 0 10px 0;
+  margin: 0 0 50px 0;
 }
 
 .user-overview-toggle{
@@ -95,10 +95,6 @@
         position: relative;
         overflow: hidden;
         margin: 140px auto 0 auto;
-    }
-
-    #flip{
-      margin-bottom: 20px;
     }
 
     .user-overview-toggle{

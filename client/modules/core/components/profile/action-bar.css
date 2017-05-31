@@ -1,0 +1,27 @@
+
+.action-bar{
+    margin: 0;
+    background: lightgrey;
+    display: flex;
+}
+
+.action-button{
+    margin: 0 auto;
+    padding: 5px 20px;
+    border-left: 2px solid dimgray;
+    border-right: 2px solid dimgray;
+    display: inline-flex;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 768px) {
+    .action-button{
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+
+    .action-bar{
+        padding: 5px 10px;
+        justify-content: center;
+    }
+}

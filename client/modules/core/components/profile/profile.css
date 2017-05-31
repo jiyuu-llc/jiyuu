@@ -37,13 +37,6 @@
     text-align: center;
 }
 
-.flip-container {
-    -webkit-perspective: 1000;
-    -moz-perspective: 1000;
-    -o-perspective: 1000;
-    perspective: 1000;
-}
-
 .flip-container.hover .flipper {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -52,9 +45,14 @@
 }
 
 .flip-container {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
     width: 100%;
     min-height: 400px;
-    margin: 0 0 0 0;
+    margin: 0 0 50px 0;
+    font-size: 25px;
 }
 
 .front, .back {
@@ -276,6 +274,7 @@
     width: 100%;
     min-height: 355px;
     margin: 0 0 20px 0;
+    font-size: 20px;
   }
 
   .flip-container, .front, .back {

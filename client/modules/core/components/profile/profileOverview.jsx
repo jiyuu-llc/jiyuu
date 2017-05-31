@@ -111,6 +111,12 @@ const ProfileOverview = () => (
                         <h5 className="profileUsername">@{FlowRouter.getParam('username')}</h5>
                     </div>
                 </div>
+                <div className="action-bar">
+                    <div className="action-button">Connect</div>
+                    <div className="action-button">Message</div>
+                    <div className="action-button">Experiences</div>
+                    <div className="action-button">Media</div>
+                </div>
             </div>
             <div className="back">
                 <div className="user-overview-info">
