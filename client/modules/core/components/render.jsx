@@ -30,14 +30,20 @@ const renderIfData = (data) => {
 };
 
 
-const Render = ({data}) => ({
+class Render extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render(){
+        const {data} = this.props;
         return(
-            <div id={"render-" + data._id} className="render-c">
+            <div id={"render-" + this.props.data._id} className="render-c">
                 {renderIfData(data)}
             </div>
         )
     }
-});
+}
+
 export default Render;
 

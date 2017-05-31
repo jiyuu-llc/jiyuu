@@ -60,10 +60,10 @@ class Search extends React.Component {
         return (
 			<div className="collapse" id="searchContain">
 				<div id="searchBar" className="bg-inverse p-a-1">
-					<input type="text" className="form-control" id="searchInput" onChange={handleSearch.bind(this, users)} onBlur={closeSearch} placeholder="Search"/>
+					<input type="text" className="form-control" id="searchInput" onChange={handleSearch.bind(this, this.props.users)} onBlur={closeSearch} placeholder="Search"/>
 				</div>
 				<div className="searchResults">
-                    {renderSearchResults(users)}
+                    {renderSearchResults(this.props.users)}
 				</div>
 			</div>
         )
