@@ -15,8 +15,6 @@ const Profile = () => ({
                 <div className="col-md-8 profileRight">
                   <ProfileOverview />
                   <div id="profileMain" className="col-xs-12">
-                    <ProfileButtonsBar />
-                    <br/>
                     <List />
                   </div>
                 </div>

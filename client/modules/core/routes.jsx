@@ -28,6 +28,7 @@ import Admin from './components/admin.jsx';
 import VideoTest from '../messenger/containers/videoTest';
 import Chat from '../messenger/components/chat';
 import RequestList from './components/requests.jsx';
+import  Media from './containers/profile/media.js'
 
 export default function (injectDeps, {FlowRouter}) {
     const MainLayoutCtx = injectDeps(MainLayout);
@@ -97,6 +98,23 @@ export default function (injectDeps, {FlowRouter}) {
 
             mount(MainLayoutCtx, {
                 content: () => (<Experiences/>)
+            });
+        }
+    });
+
+    FlowRouter.route('/profile/:username/media', {
+        name: 'users.experience',
+        triggersEnter: [function(context, redirect) {
+            Session.set('paginationLimit', 7);
+        }],
+        action: function(params, queryParams) {
+
+            if (!Meteor.userId()) {
+                FlowRouter.go('/login');
+            }
+
+            mount(MainLayoutCtx, {
+                content: () => (<Media/>)
             });
         }
     });

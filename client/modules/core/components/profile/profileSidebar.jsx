@@ -16,7 +16,7 @@ const ProfileSidebar = () => ({
                         </center>
                         <center><h5>@{FlowRouter.getParam('username')}</h5></center>
                         <a className="profile-link" href={"/profile/" + FlowRouter.getParam('username') + "/experiences"}>Experiences</a>
-                        <a className="profile-link" href={"/profile/" + FlowRouter.getParam('username') + "/files"}>Media</a>
+                        <a className="profile-link" href={"/profile/" + FlowRouter.getParam('username') + "/media"}>Media</a>
                         <a className="profile-link" href={"/profile/" + FlowRouter.getParam('username') + "/cards"}>Cards</a>
                     </div>
                     <div className="card">
