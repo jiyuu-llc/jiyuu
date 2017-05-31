@@ -6,11 +6,11 @@ import Search from '../components/search.jsx';
 const composer = ( props, onData ) => {
     if (Meteor.subscribe('userList').ready()) {
 
-      var searchResults = Session.get('searchResults');
+      let searchResults = Session.get('searchResults');
 
-      var users = Meteor.users.find({}).fetch();
+      let users = Meteor.users.find({}).fetch();
 
-      onData( null, { searchResults, users} );
+      onData(null, { searchResults, users});
     }
 
 };

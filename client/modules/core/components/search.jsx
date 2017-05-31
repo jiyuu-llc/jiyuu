@@ -5,15 +5,15 @@ const closeSearch = () => {
     Session.set('searchResults', null);
 };
 
-const handleSearch = (users, feed) => {
-	var lastSearchTime = Session.get('lastSearchTime');
+const handleSearch = (users) => {
+	let lastSearchTime = Session.get('lastSearchTime');
 
 	//if (lastSearchTime) { // check for session variable
 
 	//	if (lastSearchTime - new Date().getTime() > 200) { // enforce 200ms delay for reactive query
 			Session.set('lastSearchTime', lastSearchTime);
 
-			setSearchResults(users, feed);
+			setSearchResults(users);
 	//	}
 
 	//} else { // set session variable and continue search
@@ -27,8 +27,8 @@ const handleSearch = (users, feed) => {
 };
 
 const setSearchResults = (users) => {
-	var searchValue = $('input#searchInput').val();
-	var results = [];
+	let searchValue = $('input#searchInput').val();
+	let results = [];
 
 	results.push(
 		{_id: "12346", resultType: "user", result: "Alec Wantoch"},
@@ -49,15 +49,25 @@ const renderSearchResults = (users) => {
 	}
 };
 
-const Search = ({searchResults, users, feed}) => (
-	<div className="collapse" id="searchContain">
-		<div id="searchBar" className="bg-inverse p-a-1">
-			<input type="text" className="form-control" id="searchInput" onChange={handleSearch.bind(this, users, feed)} onBlur={closeSearch} placeholder="Search"/>
-		</div>
-		<div className="searchResults">
-			{renderSearchResults(users)}
-		</div>
-    </div>
-);
+class Search extends React.Component {
+
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		const {searchResults, users} = this.props;
+        return (
+			<div className="collapse" id="searchContain">
+				<div id="searchBar" className="bg-inverse p-a-1">
+					<input type="text" className="form-control" id="searchInput" onChange={handleSearch.bind(this, users)} onBlur={closeSearch} placeholder="Search"/>
+				</div>
+				<div className="searchResults">
+                    {renderSearchResults(users)}
+				</div>
+			</div>
+        )
+    }
+}
 
 export default Search;
