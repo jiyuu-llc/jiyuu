@@ -104,19 +104,25 @@ class ProfileOverview extends React.Component {
                                 <input onChange={coverChange.bind(this)} id="coverUpload" className="picOverlay" type="file"/>
                                 <span onClick={coverPicClick.bind(this)} className="fa fa-camera cover-upload-icon" type='file'> </span>
                             </div>
-                            <img id="coverPhoto" className="coverPhoto" src={user.cover}/>
+                            <img id="coverPhoto" className="coverPhoto" src={getUserInfo('username', FlowRouter.getParam('username'), 'cover') || '/images/cover.jpeg'}/>
                             <button id="confirmCoverUpload" onClick={confirmCoverUploadClick.bind(this)} className="btn btn-primary-outline">Save</button>
                             <div className="col-xs-12 topP">
                                 <div className="profilePicContain">
                                     <button id="confirmUpload" onClick={confirmUploadClick.bind(this)} className="btn btn-primary-outline">Save</button>
                                     <input id="profileUpload" onChange={profileChange.bind(this)} type="file" className="picOverlay" onClick={profilePicClick.bind(this)}/>
-                                    <img className="hidden-md-up" id="profilePic" src={user.avatar} width="130px" height="130px"/>
+                                    <img className="hidden-md-up" id="profilePic" src={getUserInfo('username', FlowRouter.getParam('username'), 'avatar') || '/images/users.png'} width="130px" height="130px"/>
                                 </div>
                             </div>
                             <div className="details hidden-md-up">
-                                <h3 className="profileName">{user.name}</h3>
-                                <h5 className="profileUsername">@{user.username}</h5>
+                                <h3 className="profileName">{getUserInfo('username', FlowRouter.getParam('username'), 'name')}</h3>
+                                <h5 className="profileUsername">@{FlowRouter.getParam('username')}</h5>
                             </div>
+                        </div>
+                        <div className="action-bar">
+                            <div className="action-button">Connect</div>
+                            <div className="action-button">Message</div>
+                            <div className="action-button">Experiences</div>
+                            <div className="action-button">Media</div>
                         </div>
                     </div>
                     <div className="back">
@@ -125,12 +131,6 @@ class ProfileOverview extends React.Component {
                             <center><h1 className="info-text">Featured Card Here!</h1></center>
                         </div>
                     </div>
-                </div>
-                <div className="action-bar">
-                    <div className="action-button">Connect</div>
-                    <div className="action-button">Message</div>
-                    <div className="action-button">Experiences</div>
-                    <div className="action-button">Media</div>
                 </div>
             </div>
         )
