@@ -1,7 +1,7 @@
 
 .action-bar{
     margin: 0;
-    background: lightgrey;
+    background: rgba(86, 86, 86, 0.2);
     display: flex;
 }
 

@@ -5,6 +5,7 @@ import _ from 'lodash';
 import Render from '../components/render.jsx';
 import togglePop from '../../../pops';
 import CommentsList from "../containers/comments.js"
+import Modal from './dypop/modal'
 
 const postOptionsClick = (post) => {
     console.log("Clicked!");
@@ -55,12 +56,6 @@ const commentSubmit = (post) => {
     $(inputId).val("");
 };
 
-const picTap = (post) => {
-    /*const renderId = "#img-" + post._id;
-    $(renderId).toggleClass("r-expanded"); */
-
-};
-
 const testClick = () => {
     togglePop();
 };
@@ -81,6 +76,15 @@ class PostItem extends Component {
         this.state = { isModalOpen: false, media: null }
     }
 
+    openModal(media) {
+        console.log("clicked");
+        this.setState({ isModalOpen: true, media: media })
+    }
+
+    closeModal() {
+        this.setState({ isModalOpen: false })
+    }
+
     renderIfData(post){
         return (
             <div className="card">
@@ -99,9 +103,10 @@ class PostItem extends Component {
                 <Hammer onDoubleTap={handleTap.bind(this, post)}>
                     <p id={"p-" + post._id} className="postBody" dangerouslySetInnerHTML={{__html: post.content}} />
                 </Hammer>
-                <Hammer onTap={picTap.bind(this, post)}>
+                <div onClick={() => this.openModal(post.data)}>
                     <Render data={post}/>
-                </Hammer>
+                </div>
+
                 <button style={{display:"none"}} id={"s-" + post._id} onClick={savePost.bind(this, post)} className="btn btn-primary-outline">Save</button>
                 <div className="card-block post-interact">
                     <div id={"vote-" + post._id} className="voteButtons">
@@ -130,6 +135,10 @@ class PostItem extends Component {
         return (
             <div id={post._id} className="post-item">
                 {this.renderIfData(post)}
+                <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+                    <img className="popupLightBox-img" src={this.state.media}/>
+                    <p><button onClick={() => this.closeModal()}>Close</button></p>
+                </Modal>
             </div>
         )
     }

@@ -6,9 +6,12 @@ class Modal extends React.Component {
             return null;
 
         let modalStyle = {
-            position: 'fixed',
+            top: '0',
+            position: 'absolute',
             zIndex: '9999',
-            background: '#fff'
+            background: '#fff',
+            maxHeight: '100vh',
+            overflow: 'auto'
         };
 
         if (this.props.width && this.props.height) {
@@ -26,9 +29,9 @@ class Modal extends React.Component {
         }
 
         let backdropStyle = {
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
+            position: 'fixed',
+            width: '100vw',
+            height: '100vh',
             top: '0px',
             left: '0px',
             zIndex: '9998',
