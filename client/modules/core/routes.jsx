@@ -5,7 +5,7 @@ import {mount} from 'react-mounter';
 import MainLayout from './components/main_layout';
 import List from './containers/list.js';
 import TestList from './containers/testList.jsx'
-import Profile from './components/profile/profile.jsx';
+import Profile from './containers/profile/profile.js';
 import Experiences from './containers/profile/experiences.js';
 import Hello from './components/signup/hello.js';
 import FName from './components/signup/fName.js';

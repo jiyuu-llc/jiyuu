@@ -9,6 +9,7 @@
     "bcrypt": "^0.8.7",
     "bind": "^0.1.7",
     "bootstrap": "^4.0.0-alpha.6",
+    "bufferutil": "^3.0.1",
     "embed-js": "^4.2.3",
     "event": "^1.0.0",
     "eventwheel": "^0.3.1",

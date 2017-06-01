@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 const clickOverview = () => {
     event.preventDefault();
@@ -87,13 +87,13 @@ const userNameClick = () =>{
     FlowRouter.go(FlowRouter.getParam('username'));
 };
 
-class ProfileOverview extends React.Component {
+class ProfileOverview extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        let user = getUserInfo('all', 'username', FlowRouter.getParam('username')) || fakeUser;
+        const {user} = this.props;
         return (
             <div id="flip" className="flip-container">
                 <div className="flipper">
@@ -114,7 +114,7 @@ class ProfileOverview extends React.Component {
                                 </div>
                             </div>
                             <div className="details hidden-md-up">
-                                <h3 className="profileName">{user.name}</h3>
+                                <h3 className="profileName">{user.firstName + ' ' + user.lastName}</h3>
                                 <h5 className="profileUsername">@{user.username}</h5>
                             </div>
                         </div>

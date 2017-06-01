@@ -49,25 +49,15 @@ const renderSearchResults = (users) => {
 	}
 };
 
-class Search extends React.Component {
-
-	constructor(props) {
-		super(props);
-	}
-
-	render() {
-		const {searchResults, users} = this.props;
-        return (
-			<div className="collapse" id="searchContain">
-				<div id="searchBar" className="bg-inverse p-a-1">
-					<input type="text" className="form-control" id="searchInput" onChange={handleSearch.bind(this, users)} onBlur={closeSearch} placeholder="Search"/>
-				</div>
-				<div className="searchResults">
-                    {renderSearchResults(users)}
-				</div>
-			</div>
-        )
-    }
-}
+const Search = ({searchResults, users}) => (
+	<div className="collapse" id="searchContain">
+		<div id="searchBar" className="bg-inverse p-a-1">
+			<input type="text" className="form-control" id="searchInput" onChange={handleSearch.bind(this, users)} onBlur={closeSearch} placeholder="Search"/>
+		</div>
+		<div className="searchResults">
+			{renderSearchResults(users)}
+		</div>
+	</div>
+);
 
 export default Search;
