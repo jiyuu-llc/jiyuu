@@ -10,7 +10,7 @@ const composer = (props, onData) => {
         let files;
 
         try {
-            files = Files.findOne({userId: userId}).files;
+            files = Files.findOne({userId: user._id}).files;
         } catch (TypeError) {}
 
         onData(null, {user, files});

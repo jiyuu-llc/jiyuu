@@ -8,7 +8,7 @@ const composer = (props, onData) => {
     if (connectedUserSub.ready() && Meteor.subscribe('files').ready()) {
         const user = Meteor.users.findOneFaster({username: FlowRouter.getParam('username')});
         let files;
-        try { files = Files.findOne({userId: userId}).files; } catch(TypeError) {}
+        try { files = Files.findOne({userId: user._id}).files; } catch(TypeError) {}
         console.log('files', files);
         onData(null, {user, files});
     }
