@@ -24,13 +24,14 @@ const Paginator = () => ({
 		// Use our detect's results. passive applied if supported, capture will be false either way.
 		window.addEventListener('scroll', ()=>{
 
-			if (elementIsVisible($('.post-heading')[$('.post-heading').length - 3])
+			if (elementIsVisible($('.post-heading')[$('.post-heading').length - 4])
+				|| elementIsVisible($('.post-heading')[$('.post-heading').length - 3])
                 || elementIsVisible($('.post-heading')[$('.post-heading').length - 2])
                 || elementIsVisible($('.post-heading')[$('.post-heading').length - 1])){
 
                 if (Session.get('paginationLimit') && Session.get('lastScrolled')){
 
-                    if (new Date().getTime() - 1200 > Session.get('lastScrolled')){
+                    if (new Date().getTime() - 650 > Session.get('lastScrolled')){
                         Session.set('lastScrolled', new Date().getTime());
                         Session.set('paginationLimit', Session.get('paginationLimit') + 5);
                     }
