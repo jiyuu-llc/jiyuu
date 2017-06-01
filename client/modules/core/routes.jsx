@@ -28,7 +28,7 @@ import Admin from './components/admin.jsx';
 import VideoTest from '../messenger/containers/videoTest';
 import Chat from '../messenger/components/chat';
 import RequestList from './components/requests.jsx';
-import  Media from './containers/profile/media.js'
+import Media from './containers/profile/media.js'
 
 export default function (injectDeps, {FlowRouter}) {
     const MainLayoutCtx = injectDeps(MainLayout);

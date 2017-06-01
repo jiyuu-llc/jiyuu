@@ -27,21 +27,26 @@ class Media extends Component {
                     <img onClick={() => this.openModal(file.url)} className="gallery-item" key={file.id} src={file.url}/>
                 </div>
             });
+        } else {
+            return (
+                <div>Loading...</div>
+            )
         }
     };
 
     render(){
+        const {user, files} = this.props;
         return(
             <div className="profile-container">
                 <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
                     <img className="popupLightBox-img" src={this.state.media}/>
                     <p><button onClick={() => this.closeModal()}>Close</button></p>
                 </Modal>
-                <ProfileSidebar/>
+                <ProfileSidebar user={user || fakeUser}/>
                 <div id="profile-filler-2" className="hidden-sm-down">
                 </div>
                 <div id="gallery-contain">
-                    {this.mediaList(this.props.files)}
+                    {this.mediaList(files)}
                 </div>
             </div>
         )
