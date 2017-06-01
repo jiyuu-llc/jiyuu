@@ -8,7 +8,7 @@ const ProfileSidebar = ({user}) => (
                 <br />
                 <center>
                     <a href={"/profile/" + user.username}>
-                        <h4>{user.name}</h4>
+                        <h4>{user.firstName + ' ' + user.lastName}</h4>
                     </a>
                 </center>
                 <center><h5>@{user.username}</h5></center>

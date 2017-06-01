@@ -9,7 +9,6 @@ const composer = (props, onData) => {
         const user = Meteor.users.findOneFaster({username: FlowRouter.getParam('username')});
         let files;
         try { files = Files.findOne({userId: user._id}).files; } catch(TypeError) {}
-        console.log('files', files);
         onData(null, {user, files});
     }
 };
