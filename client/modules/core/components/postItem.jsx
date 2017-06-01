@@ -83,7 +83,7 @@ class PostItem extends Component {
 
     renderIfData(post){
         return (
-            <div className="card">
+            <div className="card box-shadow">
                 <div className="post-heading">
                     <div className="post-info">
                         <a href={"profile/" + getUserInfo('_id', post.userId, 'username')}>
@@ -106,13 +106,19 @@ class PostItem extends Component {
                 <div className="card-block post-interact">
                     <div id={"vote-" + post._id} className="voteButtons">
                         <button type="button" onClick={react.bind(this, post._id, 'like')} className="btn btn-danger voteButton">
-                            {reactionCount(post.reactions, 'like')} <i className="fa fa-thumbs-o-up" aria-hidden="true"/>
+                            <span className="voteButton-inner">
+                                {reactionCount(post.reactions, 'like')} <i className="fa fa-thumbs-o-up" aria-hidden="true"/>
+                            </span>
                         </button>
                         <button type="button" onClick={react.bind(this, post._id, 'symp')} className="btn btn-info voteButton">
-                            {reactionCount(post.reactions, 'symp')} <i className="fa fa-heart" aria-hidden="true"/>
+                            <span className="voteButton-inner">
+                                {reactionCount(post.reactions, 'symp')} <i className="fa fa-heart" aria-hidden="true"/>
+                            </span>
                         </button>
                         <button type="button" onClick={react.bind(this, post._id, 'dislike')} className="btn btn-default voteButton">
-                            {reactionCount(post.reactions, 'dislike')} <i className="fa fa-thumbs-o-down"/>
+                            <span className="voteButton-inner">
+                                {reactionCount(post.reactions, 'dislike')} <i className="fa fa-thumbs-o-down"/>
+                            </span>
                         </button>
                     </div>
                     <input id={"cmtd" + post._id} type="text" onClick={commentClick.bind(this, post)} onBlur={commentClickOff.bind(this, post)} className="form-control commentInput" placeholder="Reply"/>

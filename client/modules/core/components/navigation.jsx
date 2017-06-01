@@ -48,7 +48,7 @@ const messageListHide = () => {
 };
 
 const Navigation = ({user}) => (
-            <div id={user.navPosition} className={user.color} onClick={messageListHide.bind(this)}>
+            <div id={user.navPosition} className={"box-shadow " + user.color} onClick={messageListHide.bind(this)}>
                 <nav className={"navbar navbar-jiyuu-" + user.navPosition}>
                     <div className={"navbar-toggler " + user.color + "-btn"} onClick={homeClick.bind(this)}>
                         <i className="fa fa-home" aria-hidden="true"/>

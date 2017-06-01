@@ -72,8 +72,10 @@
 
 .purpleBar-btn{
     color: white !important;
+    /*
     background-color: #721fbd !important;
     border-radius: 50% !important;
+    */
     display: inline-flex;
     margin: 0 auto;
     line-height: 1;

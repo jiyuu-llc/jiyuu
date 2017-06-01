@@ -25,6 +25,10 @@ p.postBody img {
     display: inline-flex;
 }
 
+.voteButton-inner {
+    margin-left: -6px;
+}
+
 .commentBtn{
     display: none;
     min-width: 40px;

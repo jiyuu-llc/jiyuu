@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Hammer from 'react-hammerjs';
 
 
@@ -23,14 +23,26 @@ const renderIfData = (theComments) => {
                 </Hammer>
             );
         });
-
     }
 };
 
-const CommentsList = ({theComments}) => (
-    <div className="comment-list">
-       {renderIfData(theComments)}
-    </div>
-);
+class CommentsList extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const {theComments} = this.props;
+        if (theComments && theComments.length > 0) {
+            return (
+                <div className="comment-list">
+                    {renderIfData(theComments)}
+                </div>
+            )
+        } else {
+            return null;
+        }
+    }
+}
 
 export default CommentsList;

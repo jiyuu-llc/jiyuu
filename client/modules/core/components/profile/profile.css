@@ -249,6 +249,10 @@
     max-width: 250px;
 }
 
+#profileLeft > .card {
+    margin-bottom: 15px;
+}
+
 .profileRight{
     display: inline-block;
     padding: 0 !important;
