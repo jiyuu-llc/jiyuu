@@ -89,8 +89,10 @@
 
 .blueBar-btn{
     color: white;
+    /*
     background-color: #1922bd !important;
     border-radius: 50% !important;
+    */
     display: inline-flex;
     margin: 0 auto;
     line-height: 1;
@@ -104,8 +106,10 @@
 
 .greenBar-btn{
     color: white;
+    /*
     background-color: #33bc40 !important;
     border-radius: 50% !important;
+    */
     display: inline-flex;
     margin: 0 auto;
     line-height: 1;
@@ -119,8 +123,10 @@
 
 .redBar-btn{
     color: white;
+    /*
     background-color: #bd383b !important;
     border-radius: 50% !important;
+    */
     display: inline-flex;
     margin: 0 auto;
     line-height: 1;
@@ -134,8 +140,10 @@
 
 .yellowBar-btn{
     color: white !important;
+    /*
     background-color: #d8db10 !important;
     border-radius: 50% !important;
+    */
     display: inline-flex;
     margin: 0 auto;
     line-height: 1;
@@ -149,8 +157,10 @@
 
 .pinkBar-btn{
     color: white !important;
+    /*
     background-color: #da5d99 !important;
     border-radius: 50% !important;
+    */
     display: inline-flex;
     margin: 0 auto;
     line-height: 1;
@@ -164,8 +174,10 @@
 
 .blackBar-btn{
     color: white !important;
+    /*
     background-color: #721fbd !important;
     border-radius: 50% !important;
+    */
     display: inline-flex;
     margin: 0 auto;
     line-height: 1;
@@ -179,7 +191,9 @@
 
 .whiteBar-btn{
     border: 1px solid black;
+    /*
     border-radius: 50% !important;
+    */
     display: inline-flex;
     margin: 0 auto;
     line-height: 1;
