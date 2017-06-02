@@ -38,7 +38,6 @@ class Experiences extends Component {
             <div className="profile-container">
                 <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
                     <img className="popupLightBox-img" src={this.state.media}/>
-                    <p><button onClick={() => this.closeModal()}>Close</button></p>
                 </Modal>
                 <ProfileSidebar user={user || fakeUser} />
                 <div id="profile-filler-2" className="hidden-sm-down">

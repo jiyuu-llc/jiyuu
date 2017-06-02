@@ -119,13 +119,13 @@ class ProfileOverview extends Component {
                             </div>
                         </div>
                         <div className="action-bar box-shadow">
-                            <div className="action-button">Connect</div>
+                            <a className="action-button" href="">Connect</a>
                             <div className="action-bar-divider"></div>
-                            <div className="action-button">Message</div>
+                            <a className="action-button" href="">Message</a>
                             <div className="action-bar-divider"></div>
-                            <div className="action-button">Experiences</div>
+                            <a className="action-button" href={"/profile/" + user.username + "/experiences"}>Experiences</a>
                             <div className="action-bar-divider"></div>
-                            <div className="action-button">Media</div>
+                            <a className="action-button" href={"/profile/" + user.username + "/media"}>Media</a>
                         </div>
                     </div>
                     <div className="back">
