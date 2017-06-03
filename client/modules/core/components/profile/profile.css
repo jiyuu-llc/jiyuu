@@ -212,13 +212,12 @@
 .gallery-item{
     width: 100%;
     height: auto;
-    background-color: white;
-    padding: 5px;
     max-width: 190px;
 }
 
 
 .gallery-item-c{
+
     min-width: 210px;
     max-width: 190px;
     max-height: 210px;
@@ -342,18 +341,14 @@
         flex-wrap: wrap;
     }
     .gallery-item-c{
-        min-width: 55px;
-        height: 20%;
+        height: 104px;
         width: 30%;
-        max-width: 190px;
-        margin: 5px 5px;
+        max-width: 140px;
+        margin: 2px 2px;
 
     }
 
     .gallery-item{
-        max-width: 190px;
-        background-color: white;
-        padding: 5px;
     }
 
 }

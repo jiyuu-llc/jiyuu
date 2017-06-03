@@ -22,7 +22,7 @@ class Media extends Component {
     mediaList(files){
         if ( files && files.length > 0 ) {
             return files.map( ( file ) => {
-                return <div className="gallery-item-c"  key={file._id}>
+                return <div className="gallery-item-c" key={file._id}>
                     <div onClick={deleteImage.bind(this, file)} className="image-delete fa fa-times" id={file._id}></div>
                     <img onClick={() => this.openModal(file.url)} className="gallery-item" key={file.id} src={file.url}/>
                 </div>
@@ -40,7 +40,6 @@ class Media extends Component {
             <div className="profile-container">
                 <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
                     <img className="popupLightBox-img" src={this.state.media}/>
-                    <p><button onClick={() => this.closeModal()}>Close</button></p>
                 </Modal>
                 <ProfileSidebar user={user || fakeUser}/>
                 <div id="profile-filler-2" className="hidden-sm-down">

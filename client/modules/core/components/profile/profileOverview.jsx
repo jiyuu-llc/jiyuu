@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ActionBar from './actionBar.jsx';
 
 const clickOverview = () => {
     event.preventDefault();
@@ -118,15 +119,7 @@ class ProfileOverview extends Component {
                                 <h5 className="profileUsername">@{user.username}</h5>
                             </div>
                         </div>
-                        <div className="action-bar box-shadow">
-                            <a className="action-button" href="">Connect</a>
-                            <div className="action-bar-divider"></div>
-                            <a className="action-button" href="">Message</a>
-                            <div className="action-bar-divider"></div>
-                            <a className="action-button" href={"/profile/" + user.username + "/experiences"}>Experiences</a>
-                            <div className="action-bar-divider"></div>
-                            <a className="action-button" href={"/profile/" + user.username + "/media"}>Media</a>
-                        </div>
+                        <ActionBar user={user} />
                     </div>
                     <div className="back">
                         <div className="user-overview-info">
