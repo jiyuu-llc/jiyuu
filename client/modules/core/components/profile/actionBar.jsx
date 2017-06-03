@@ -18,7 +18,8 @@ class ActionBar extends Component{
             speed: 500,
             slidesToShow: 3,
             slidesToScroll: 2,
-            touchMove: true
+            touchMove: true,
+            autoplay: true
         };
 
 
