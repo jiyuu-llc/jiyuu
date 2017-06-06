@@ -1,5 +1,5 @@
 import {Meteor} from 'meteor/meteor';
-import {Feed, Convos, Mind, Files, Comments, Notifications, Requests, Rooms} from '/lib/collections';
+import {Feed, Convos, Mind, Files, Comments, Notifications, Requests, Rooms, Experiences} from '/lib/collections';
 import {check} from 'meteor/check';
 import {Random} from 'meteor/random';
 import _ from 'lodash';
@@ -253,6 +253,21 @@ Meteor.methods({
 
     'notification.remove'(id){
         Notifications.remove({_id: id});
-    }
+    },
 
+    'experience.create'(userId, expName, media){
+        Experiences.insert({
+            userId: userId,
+            Name: expName,
+            Cover: media[0].url,
+            Media: media
+        });
+    },
+
+    'experience.addTo'(id, media){
+        Experiences.upsert({_id:id}, {
+                $push: {media: {media},
+            }
+        });
+    }
 });

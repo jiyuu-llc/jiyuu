@@ -17,10 +17,6 @@ const ProfileSidebar = ({user}) => (
                 <a className="profile-link" href={"/profile/" + user.username + "/cards"}>Cards</a>
             </div>
             <div className="card box-shadow">
-                <div className="card-block"><h4>Photos</h4></div>
-                <div className="card-block"></div>
-            </div>
-            <div className="card box-shadow">
                 <div className="card-block"><h4>Stats</h4></div>
                 <div className="card-block"><strong>Shares</strong> <span className="pull-right">97</span></div>
                 <div className="card-block"><strong>Likes</strong> <span className="pull-right">42</span></div>

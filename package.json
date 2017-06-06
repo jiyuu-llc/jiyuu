@@ -7,6 +7,8 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "bcrypt": "^0.8.7",
+    "better-react-flex-slick": "0.0.13",
+    "better-react-flex-slick-m": "0.0.15",
     "bind": "^0.1.7",
     "bootstrap": "^4.0.0-alpha.6",
     "bufferutil": "^3.0.1",

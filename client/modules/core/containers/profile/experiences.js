@@ -5,15 +5,15 @@ import {Files} from '/lib/collections';
 import Experiences from '../../components/profile/experiences.jsx';
 
 const composer = (props, onData) => {
-    if (connectedUserSub.ready() && Meteor.subscribe('files').ready()) {
+    if (Meteor.subscribe('experiences').ready()) {
         const user = Meteor.users.findOneFaster({username: FlowRouter.getParam('username')});
-        let files;
+        let experiences;
 
         try {
-            files = Files.findOne({userId: user._id}).files;
+            experiences = Experiences.find({userId: user._id});
         } catch (TypeError) {}
 
-        onData(null, {user, files});
+        onData(null, {user, experiences});
     }
 };
 
