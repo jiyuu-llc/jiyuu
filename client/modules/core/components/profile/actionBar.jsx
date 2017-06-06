@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import { Slider, Slides, Dots, PrevArrow, NextArrow } from 'better-react-flex-slick'
 
 
 
