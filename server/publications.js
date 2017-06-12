@@ -128,10 +128,9 @@ Meteor.publish('userList', function() {
 });
 
 Meteor.publish('notifications', function(){
-    const userId = Meteor.userId();
     return Notifications.find({$or: [
-              {from: userId},
-              {to: userId}
+              {from: this.userId},
+              {to: this.userId}
            ]
           },
           {
@@ -144,10 +143,9 @@ Meteor.publish('experiences', function(){
 });
 
 Meteor.publish('requests', function(){
-    const userId = Meteor.userId();
     return Requests.find({$or: [
-              {from: userId},
-              {to: userId}
+              {from: this.userId},
+              {to: this.userId}
            ]
           },
           {
