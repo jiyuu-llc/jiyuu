@@ -20,7 +20,7 @@ const ProfileSidebar = ({user}) => (
                 <div className="card-block"><h4>Stats</h4></div>
                 <div className="card-block"><strong>Shares</strong> <span className="pull-right">97</span></div>
                 <div className="card-block"><strong>Likes</strong> <span className="pull-right">42</span></div>
-                <div className="card-block"><strong>Followers</strong> <span className="pull-right">54</span></div>
+                <div className="card-block"><strong>Connections</strong> <span className="pull-right">54</span></div>
             </div>
     </div>
 );
