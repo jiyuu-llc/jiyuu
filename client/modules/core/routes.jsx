@@ -27,7 +27,7 @@ import Interests from './components/signup/interests.js';
 import Admin from './components/admin.jsx';
 import VideoTest from '../messenger/containers/videoTest';
 import Chat from '../messenger/components/chat';
-import RequestList from './components/requests.jsx';
+import Requests from './containers/requests.js';
 import Media from './containers/profile/media.js'
 
 export default function (injectDeps, {FlowRouter}) {
@@ -142,7 +142,7 @@ export default function (injectDeps, {FlowRouter}) {
             }
 
             mount(MainLayoutCtx, {
-                content: () => (<RequestList/>)
+                content: () => (<Requests/>)
             });
         }
     });

@@ -5,7 +5,7 @@ import RequestList from '../components/requests.jsx';
 
 const composer = (props, onData) => {
     if (Meteor.subscribe('requests').ready()) {
-        const requests = Requests.find({to: Meteor.userId()}).fetch();
+        const requests = Requests.find({userId: Meteor.userId()}).fetch();
         onData(null, {requests});
     }
 };

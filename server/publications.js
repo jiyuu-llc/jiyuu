@@ -129,7 +129,7 @@ Meteor.publish('userList', function() {
 
 Meteor.publish('notifications', function(){
     return Notifications.find({$or: [
-              {from: this.userId},
+              {userId: this.userId},
               {to: this.userId}
            ]
           },
@@ -144,7 +144,7 @@ Meteor.publish('experiences', function(){
 
 Meteor.publish('requests', function(){
     return Requests.find({$or: [
-              {from: this.userId},
+              {userId: this.userId},
               {to: this.userId}
            ]
           },

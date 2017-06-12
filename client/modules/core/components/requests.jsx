@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class RequestList extends Component {
+class Requests extends Component {
     constructor(props){
         super(props);
     }
@@ -8,15 +8,16 @@ class RequestList extends Component {
     renderRequests(requests) {
 
         if (requests && requests.length > 0) {
-            return requests.map((fromId, toId) => {
+            console.log(requests);
+            return requests.map((req) => {
                 return (
-                    <div className="notifi-item">
+                    <div key={req._id} className="notifi-item">
                         <div className="notifiImageContain">
-                            <img className="notifiImage" height="55px" width="55px" src={getUserInfo('_id', fromId, 'avatar') || fakeUser.avatar} />
+                            <img className="notifiImage" height="55px" width="55px" src={getUserInfo('_id', req.from, 'avatar') || fakeUser.avatar} />
                         </div>
-                        <div key={from} className="notifiInfoContain">
+                        <div className="notifiInfoContain">
                             <div className="notifiInfo">
-                                Connection request from {getUserInfo('_id', fromId, 'name') || fakeUser.name}
+                                Connection request from {getUserInfo('_id', req.from, 'name') || fakeUser.name}
                                 <div>Accept</div>
                                 <div>Decline</div>
                             </div>
@@ -47,4 +48,4 @@ class RequestList extends Component {
     }
 }
 
-export default RequestList;
+export default Requests;

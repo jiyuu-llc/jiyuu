@@ -4,6 +4,6 @@ import {check} from 'meteor/check';
 
 Meteor.methods({
 	'requests.add'(to){
-		Requests.insert({from: Meteor.userId(), to: to});
+		Requests.insert({from: Meteor.userId(), userId: to});
 	}
 });
