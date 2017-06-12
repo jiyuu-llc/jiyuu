@@ -128,6 +128,7 @@ Meteor.publish('userList', function() {
 });
 
 Meteor.publish('notifications', function(){
+    const userId = Meteor.userId();
     return Notifications.find({$or: [
               {from: userId},
               {to: userId}
