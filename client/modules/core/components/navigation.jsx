@@ -110,7 +110,7 @@ class Navigation extends Component{
                     </div>
                 </div>
                 <Search/>
-                <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+                <Modal className="popupModal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
                         <NewPost/>
                 </Modal>
             </div>

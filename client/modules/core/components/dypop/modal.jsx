@@ -9,7 +9,6 @@ class Modal extends React.Component {
             top: '0',
             position: 'absolute',
             zIndex: '9999',
-            background: '#fff',
             maxHeight: '100vh',
             overflow: 'auto'
         };
@@ -45,7 +44,7 @@ class Modal extends React.Component {
         }
 
         return (
-            <div className={this.props.containerClassName}>
+            <div className="dynamicRender">
                 <div className={this.props.className} style={modalStyle}>
                     {this.props.children}
                 </div>

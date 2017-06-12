@@ -11,10 +11,13 @@
 }
 
 .popupModal{
+    position: absolute;
     background-color: #fff;
     border-radius: 5px;
+    width: 80%;
     max-width: 500px;
-    min-height: 300px;
+    left: 0;
+    right: 0;
     margin: 20px auto;
     padding: 30px;
     z-index: 9005;
@@ -22,6 +25,14 @@
 
 .popupLightBox{
 
+}
+
+.dynamicRender{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
 .popupLightBox-img{
@@ -39,4 +50,6 @@
 .popupQuestion{
 
 }
+
+
 
