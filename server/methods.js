@@ -231,23 +231,26 @@ Meteor.methods({
     'createRoom'(receiver, roomId){
         console.log(receiver);
 
-        var receiverUserId = Meteor.users.findOne({username: receiver})._id;
-        var senderUserName = Meteor.users.findOne({_id: Meteor.userId()}).username;
+        const receiverUserId = Meteor.users.findOne({username: receiver})._id;
+        const senderUserName = Meteor.users.findOne({_id: Meteor.userId()}).username;
 
-        console.log(receiverUserId);
         Rooms.insert({
             roomId: roomId,
             users: [Meteor.userId(), receiverUserId]
         });
-        Meteor.call("notification.create", receiverUserId, senderUserName, roomId)
+
+        const text = senderUserName + ' is calling you';
+        const type = 'call';
+        const data = roomId;
+        Meteor.call("notification.create", receiverUserId, senderUserName, text, type, data);
     },
 
-    'notification.create'(receiverId, senderUserName, roomId){
+    'notification.create'(receiverId, senderUserName, text, type, data){
         Notifications.insert({
             userId: receiverId,
-            text: senderUserName + " is calling you.",
-            type: "request",
-            token: roomId
+            text: text,
+            type: type,
+            data: data
         });
     },
 

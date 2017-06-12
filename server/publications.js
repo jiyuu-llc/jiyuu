@@ -1,6 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
-import { Feed, Convos, Messages, Connections, Files, Comments, Notifications, Experiences} from '/lib/collections';
+import { Feed, Convos, Messages, Connections, Files, Comments, Notifications, Experiences, Requests} from '/lib/collections';
 import _ from 'lodash';
 
 Meteor.publish('connectedUsers', function(requestedIds, requestedUsernames){
@@ -128,9 +128,28 @@ Meteor.publish('userList', function() {
 });
 
 Meteor.publish('notifications', function(){
-    return Notifications.find();
+    return Notifications.find({$or: [
+              {from: userId},
+              {to: userId}
+           ]
+          },
+          {
+            sort: {createdAt: -1}
+          });
 });
 
 Meteor.publish('experiences', function(){
     return Experiences.find();
+});
+
+Meteor.publish('requests', function(){
+    const userId = Meteor.userId();
+    return Requests.find({$or: [
+              {from: userId},
+              {to: userId}
+           ]
+          },
+          {
+            sort: {createdAt: -1}
+          });
 });
