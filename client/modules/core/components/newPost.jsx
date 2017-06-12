@@ -1,21 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const renderConnections = (connections) => {
-    if (Meteor.userId() && connections){
-        return connections.map((group)=>{
-            if (group.name != 'Blocked'){
-                return (
-                    <label key={group._id}>
-                        <input type="checkbox" name={group._id}/>&nbsp;{group.name}
-                    </label>
-                )
-            }
-        })
-    }
-};
 
-const NewPostModal = ({connections}) => ({
 
+class  NewPost extends Component{
 
     newPost(){
         if (Meteor.userId()){
@@ -46,32 +33,22 @@ const NewPostModal = ({connections}) => ({
                 }
             });
         }
-    },
+    }
 
     render() {
         return (
-            <div className="modal fade" id="siteModal" role="dialog">
-                <div className="modal-dialog">
-
                     <div className="modal-content">
                         <div className="modal-body">
                             <textarea className="form-control new-post" rows="5" id="postValue" />
                         </div>
                         <div className="modal-footer">
-                            {renderConnections(connections)}
-                            <label>
-                              <input type="checkbox" name="public" defaultChecked />&nbsp;Public
-                            </label>
                             <button type="button" onClick={this.newPost.bind(this)} data-dismiss="modal" className="btn btn-primary">Post</button>
                             <input type="file" id="fileUpload" className="btn btn-primary-outline"/>
                             <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-
-                </div>
-            </div>
         );
     }
-});
+}
 
-export default NewPostModal;
+export default NewPost;
