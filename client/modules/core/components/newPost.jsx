@@ -44,7 +44,6 @@ class  NewPost extends Component{
                         <div>
                             <button type="button" onClick={this.newPost.bind(this)} data-dismiss="modal" className="btn btn-primary">Post</button>
                             <input type="file" id="fileUpload" className="btn btn-primary-outline"/>
-                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
         );
