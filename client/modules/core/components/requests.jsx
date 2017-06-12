@@ -13,11 +13,11 @@ class Requests extends Component {
                 return (
                     <div key={req._id} className="notifi-item">
                         <div className="notifiImageContain">
-                            <img className="notifiImage" height="55px" width="55px" src={getUserInfo('_id', req.from, 'avatar') || fakeUser.avatar} />
+                            <img className="notifiImage" height="55px" width="55px" src={getUserInfo('_id', req.fromId, 'avatar') || fakeUser.avatar} />
                         </div>
                         <div className="notifiInfoContain">
                             <div className="notifiInfo">
-                                Connection request from {getUserInfo('_id', req.from, 'name') || fakeUser.name}
+                                Connection request from {getUserInfo('_id', req.fromId, 'name') || fakeUser.name}
                                 <div>Accept</div>
                                 <div>Decline</div>
                             </div>

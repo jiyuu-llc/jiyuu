@@ -1,7 +1,7 @@
 import React from 'react';
 import SimpleWebRTC from '../../../configs/simplewebrtc.bundle';
 import { Random } from 'meteor/random';
-import Notificationlist from "../containers/notifications";
+import Notifications from "../../notifications/containers/notifications.js";
 
 
 
@@ -39,7 +39,7 @@ const VideoTest = () =>({
                     <div id="remotes">
                     </div>
                 </center>
-                <Notificationlist/>
+                <Notifications />
             </div>
         )
     },
