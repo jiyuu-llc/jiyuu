@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 
 
-class  NewPost extends Component{
+class NewPost extends Component {
 
     newPost(){
         if (Meteor.userId()){

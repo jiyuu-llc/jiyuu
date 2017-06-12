@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class Modal extends React.Component {
+class Modal extends Component {
     render() {
         if (this.props.isOpen === false)
             return null;

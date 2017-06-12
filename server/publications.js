@@ -15,6 +15,9 @@ Meteor.publish('connectedUsers', function(requestedIds, requestedUsernames){
                 });
             });
         });
+        Requests.findFaster({userId: userId}).forEach(function(doc){
+            userIds.push(doc.fromId);
+        });
         userIds = _.uniq(_.concat(userIds, requestedIds));
         return Meteor.users.findFaster({$or: [{_id: userId}, {_id: {$in: userIds}}, {username: {$in: requestedUsernames}}]},
             {fields: {_id: 1, username: 1, avatar: 1, cover: 1, firstName: 1, lastName: 1, color: 1, navPosition: 1}});
@@ -128,11 +131,7 @@ Meteor.publish('userList', function() {
 });
 
 Meteor.publish('notifications', function(){
-    return Notifications.find({$or: [
-              {userId: this.userId},
-              {to: this.userId}
-           ]
-          },
+    return Notifications.find({userId: this.userId},
           {
             sort: {createdAt: -1}
           });
@@ -143,11 +142,7 @@ Meteor.publish('experiences', function(){
 });
 
 Meteor.publish('requests', function(){
-    return Requests.find({$or: [
-              {userId: this.userId},
-              {to: this.userId}
-           ]
-          },
+    return Requests.find({userId: this.userId},
           {
             sort: {createdAt: -1}
           });
