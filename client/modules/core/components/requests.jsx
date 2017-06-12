@@ -1,7 +1,36 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const RequestList = () => ({
+class RequestList extends Component {
+    constructor(props){
+        super(props);
+    }
+
+    renderRequests(requests) {
+
+        if (requests && requests.length > 0) {
+            return requests.map((fromId, toId) => {
+                return (
+                    <div className="notifi-item">
+                        <div className="notifiImageContain">
+                            <img className="notifiImage" height="55px" width="55px" src={getUserInfo('_id', fromId, 'avatar') || fakeUser.avatar} />
+                        </div>
+                        <div key={from} className="notifiInfoContain">
+                            <div className="notifiInfo">
+                                Connection request from {getUserInfo('_id', fromId, 'name') || fakeUser.name}
+                                <div>Accept</div>
+                                <div>Decline</div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            })
+        } else {
+            return "You have no pending requests!";
+        }
+    }
+
     render() {
+        const {requests} = this.props;
         return (
             <div>
                 <div className="notifications">
@@ -11,22 +40,11 @@ const RequestList = () => ({
                     </div>
                 </div>
                 <div className="notification-list">
-                    <div className="notifi-item">
-                        <div className="notifiImageContain">
-                            <img className="notifiImage" height="55px" width="55px" src="/images/profile.jpg" />
-                        </div>
-                        <div className="notifiInfoContain">
-                            <div className="notifiInfo">
-                                Alec Wantoch - connection request.
-                                <div>Accept</div>
-                                <div>Decline</div>
-                            </div>
-                        </div>
-                    </div>
+                    {this.renderRequests(requests)}
                 </div>
             </div>
-        );
+        )
     }
-});
+}
 
 export default RequestList;

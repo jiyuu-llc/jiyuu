@@ -16,7 +16,7 @@ import Contact from './components/signup/contact.js';
 import Welcome from './components/signup/welcome.js';
 import UName from './components/signup/uName.js';
 import Password from './components/signup/password.js';
-import Notifications from '../notifications/components/notifications.js';
+import Notifications from '../notifications/containers/notifications.js';
 import Settings from './containers/settings.js';
 import Messenger from '../messenger/components/messenger.js';
 import LoginForm from './components/loginForm.jsx';
