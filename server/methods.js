@@ -258,9 +258,9 @@ Meteor.methods({
     'experience.create'(userId, expName, media){
         Experiences.insert({
             userId: userId,
-            Name: expName,
-            Cover: media[0].url,
-            Media: media
+            name: expName,
+            cover: media[0].url,
+            media: media
         });
     },
 

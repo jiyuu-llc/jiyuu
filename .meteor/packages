@@ -2,7 +2,7 @@
 # Check this file (and the other files in this directory) into your repository.
 #
 # 'meteor add' and 'meteor remove' will edit this file for you,
-# but you can also edit it by hand.
+# butgit  you can also edit it by hand.
 
 meteor-base@1.0.4             # Packages every Meteor app needs to have
 mongo@1.1.16                   # The database Meteor supports right now

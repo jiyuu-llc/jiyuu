@@ -10,7 +10,7 @@ class ExperienceSelector extends Component{
     }
 
     render(){
-        const {expereiences} = this.state.experiences;
+        const {experiences} = this.state.experiences;
         return(
             <div>
             </div>
