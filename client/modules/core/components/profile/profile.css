@@ -180,6 +180,7 @@
 
 .profile-container{
     display: flex !important;
+    margin: 0 10%;
     overflow: hidden;
 }
 
