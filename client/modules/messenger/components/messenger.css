@@ -20,6 +20,7 @@
 
 #messenger-title{
     text-align: center;
+    padding: 5px;
 }
 
 #conversationList{
@@ -71,7 +72,7 @@
     display: inline-flex;
 }
 
-#dMsg, #newMsgBtn{
+.messenger-button {
     margin: 0 5px 0 5px;
     display: inline-block;
 }

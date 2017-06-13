@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-
-
 class NewPost extends Component {
 
     newPost(){
@@ -26,7 +24,8 @@ class NewPost extends Component {
             }
 
             const content = $("#postValue").val();
-            var canView = $('input[type=checkbox]:checked').map(function(i,el){return el.name;}).get() || [];
+            let canView = $('input[type=checkbox]:checked').map((i,el)=>{return el.name}).get() || [];
+
             Meteor.call('feed.add', content, canView, (err, res) => {
                 if (!err && res) {
                     $("#postValue").val(null);
@@ -42,7 +41,7 @@ class NewPost extends Component {
                             <textarea className="form-control new-post" rows="5" id="postValue" />
                         </div>
                         <div>
-                            <button type="button" onClick={this.newPost.bind(this)} data-dismiss="modal" className="btn btn-primary">Post</button>
+                            <button type="button" onClick={this.newPost} data-dismiss="modal" className="btn btn-primary">Post</button>
                             <input type="file" id="fileUpload" className="btn btn-primary-outline"/>
                         </div>
                     </div>
