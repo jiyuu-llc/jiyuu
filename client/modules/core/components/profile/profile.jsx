@@ -11,9 +11,9 @@ class Profile extends Component {
     render() {
         const {user} = this.props;
         return (
-            <div className="container profile-container">
+            <div className="profile-container">
                 <ProfileSidebar user={user || fakeUser} />
-                <div id="profile-filler" className="col-md-3 hidden-sm-down">
+                <div id="profile-filler-2" className="col-md-3 hidden-sm-down">
                 </div>
                 <div className="col-md-8 profileRight">
                     <ProfileOverview user={user || fakeUser} />
