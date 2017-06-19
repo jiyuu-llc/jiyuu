@@ -1,5 +1,5 @@
 import React from 'react';
-import PostItem from '../postItem.jsx';
+import PostItem from '../../../../../ui/components/postItem.jsx';
 
 const renderIfData = ( feed ) => {
     if ( feed && feed.length > 0 ) {

@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import moment from 'moment';
 import Hammer from 'react-hammerjs';
 import _ from 'lodash';
-import Render from '../components/render.jsx';
-import CommentsList from "../containers/comments.js"
-import Modal from './dypop/modal'
+import Render from '../../old/modules/core/components/render.jsx';
+import CommentsList from "../../old/modules/core/containers/comments.js"
+import Modal from '../../old/modules/core/components/dypop/modal'
 
 const postOptionsClick = (post) => {
     console.log("Clicked!");

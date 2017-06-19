@@ -1,4 +1,4 @@
-import List from '../../components/list.jsx';
+import List from '../../../../../imports/ui/components/list.jsx';
 import {composeWithTracker} from 'react-komposer';
 import {Feed} from '/lib/collections';
 

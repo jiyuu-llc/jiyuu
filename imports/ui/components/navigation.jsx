@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Modal from './dypop/modal'
-import NewPost from './newPost.jsx';
-import Search from '../containers/search.js';
+import Modal from '../../old/modules/core/components/dypop/modal'
+import NewPost from '../../old/modules/core/components/newPost.jsx';
+import Search from '../../old/modules/core/containers/search.js';
 
 const searchClick = () => {
     $('.searchResults').show();

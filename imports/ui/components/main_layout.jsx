@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import ResolveUsers from '../containers/connectedUsers.js';
 import Navigation from '../containers/navigation.js';
-import DynamicRender from '../containers/DynamicRender.js';
 
 const Paginator = () => ({
 	render(){
@@ -48,7 +47,7 @@ const Paginator = () => ({
 });
 
 
-class Layout extends Component {
+class MainLayout extends Component {
 
 	constructor(props) {
 		super(props);
@@ -62,13 +61,12 @@ class Layout extends Component {
 				<Navigation />
 
 				<div id="page-content">
-					{this.props.content()}
+					{this.props.children}
 				</div>
-				<DynamicRender />
 				<Paginator />
 			</div>
 		)
 	}
 }
 
-export default Layout;
+export default MainLayout;

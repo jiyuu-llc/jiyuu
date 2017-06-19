@@ -15,7 +15,6 @@ ecmascript@0.8.0              # Enable ECMAScript2015+ syntax in app code
 
 
 static-html
-kadira:flow-router
 
 fourseven:scss
 fortawesome:fontawesome
