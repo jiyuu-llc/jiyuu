@@ -7,6 +7,9 @@ import List from '../../ui/containers/list.js'
 import Messenger from '../../ui/components/messenger/messenger.jsx';
 import Settings from '../../ui/components/settings.jsx'
 
+
+
+/* This component is not Currently in use!!!*/
 export default () => (
     <Router history={history}>
         <Switch>

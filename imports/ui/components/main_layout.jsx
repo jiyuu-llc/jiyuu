@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
 import ResolveUsers from '../containers/connectedUsers.js';
 import Navigation from '../containers/navigation.js';
-import Routes from '../../startup/client/routes.js';
+import Connect from '../containers/connect.js';
+
+import {
+	BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+
+import List from '../../ui/containers/list.js'
+import Messenger from '../../ui/components/messenger/messenger.jsx';
+import Settings from '../../ui/containers/settings.js'
+
 
 const Paginator = () => ({
 	render(){
@@ -57,15 +65,22 @@ class MainLayout extends Component {
 
 	render(){
 		return(
+		<Router>
 			<div>
 				<ResolveUsers />
 				<Navigation />
 
 				<div id="page-content">
-					<Routes/>
+						<Switch>
+							<Route exact name="index" path="/" component={List} />
+							<Route path="/messages" component={Messenger} />
+							<Route path="/settings" component={Settings} />
+							<Route path="/connect" component={Connect} />
+						</Switch>
 				</div>
 				<Paginator />
 			</div>
+		</Router>
 		)
 	}
 }

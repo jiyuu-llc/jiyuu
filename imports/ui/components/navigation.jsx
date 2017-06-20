@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Modal from '../../old/modules/core/components/dypop/modal'
 import NewPost from '../../old/modules/core/components/newPost.jsx';
 import Search from '../../old/modules/core/containers/search.js';
+import { Link } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 const history = createHistory();
 
@@ -75,16 +76,16 @@ class Navigation extends Component{
         return(
             <div id={user.navPosition} className={"box-shadow " + user.color} onClick={messageListHide.bind(this)}>
                 <nav className={"navbar navbar-jiyuu-" + user.navPosition}>
-                    <div className={"navbar-toggler " + user.color + "-btn"} onClick={homeClick.bind(this)}>
+                    <Link to="/" className={"navbar-toggler " + user.color + "-btn"}>
                         <i className="fa fa-home" aria-hidden="true"/>
-                    </div>
+                    </Link>
                     <div className={"navbar-toggler " + user.color + "-btn"} onClick={this.openModal.bind(this)}
                          data-toggle="collapse">
                         <i className="fa fa-pencil" aria-hidden="true"/>
                     </div>
-                    <div className={"navbar-toggler " + user.color + "-btn"} onClick={messageClick.bind(this)}>
+                    <Link to="/messages" className={"navbar-toggler " + user.color + "-btn"}>
                         <i className="fa fa-envelope" aria-hidden="true"/>
-                    </div>
+                    </Link>
                     <div className={"navbar-toggler " + user.color + "-btn"} onClick={searchClick.bind(this)}
                          data-toggle="collapse" data-target="#searchContain">
                         <i className="fa fa-search" aria-hidden="true"/>
@@ -108,10 +109,10 @@ class Navigation extends Component{
                              data-toggle="collapse" data-target="#exCollapsingNavbar">
                             <i className="fa fa-user" aria-hidden="true"/>
                         </div>
-                        <div className={"navbar-toggler " + user.color + "-btn"} onClick={cogClick.bind(this)}
+                        <Link to="/settings" className={"navbar-toggler " + user.color + "-btn"}
                              data-toggle="collapse" data-target="#exCollapsingNavbar">
                             <i className="fa fa-cog" aria-hidden="true"/>
-                        </div>
+                        </Link>
                         <div className={"navbar-toggler " + user.color + "-btn"} onClick={notifiClick.bind(this)}
                              data-toggle="collapse" data-target="#exCollapsingNavbar">
                             <i className="fa fa-bell" aria-hidden="true"/>
