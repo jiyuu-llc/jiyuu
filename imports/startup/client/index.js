@@ -3,10 +3,10 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 
-import Routes from './routes.js';
+import MainLayout from '../../ui/components/main_layout.jsx';
 
 Meteor.startup(() => {
     render((
-        <Routes />
+        <MainLayout />
     ), document.getElementById('app'));
 });

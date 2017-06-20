@@ -1,7 +1,7 @@
 import React from 'react';
 import { Convos } from '/lib/collections';
 import { composeWithTracker } from 'react-komposer';
-import MessageList from '../components/messageList.jsx';
+import MessageList from '../../components/messenger/messageList.jsx';
 
 const composer = ( props, onData ) => {
   if (Meteor.subscribe('convos').ready()) {

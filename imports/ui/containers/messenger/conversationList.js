@@ -1,5 +1,5 @@
 import React from 'react';
-import ConvoList from '../components/conversationList.jsx';
+import ConvoList from '../../components/messenger/conversationList.jsx';
 import { composeWithTracker } from 'react-komposer';
 import { Convos } from '../../../../lib/collections';
 

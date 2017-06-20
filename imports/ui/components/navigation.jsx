@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Modal from '../../old/modules/core/components/dypop/modal'
 import NewPost from '../../old/modules/core/components/newPost.jsx';
 import Search from '../../old/modules/core/containers/search.js';
+import createHistory from 'history/createBrowserHistory';
+const history = createHistory();
 
 const searchClick = () => {
     $('.searchResults').show();
@@ -9,31 +11,38 @@ const searchClick = () => {
 };
 
 const cogClick = () => {
-    FlowRouter.go("/settings");
+    history.push('/settings');
+    /*FlowRouter.go("/settings"); */
 };
 
 const profileClick = () => {
-    FlowRouter.go("/profile");
+    history.push('/profile');
+   /* FlowRouter.go("/profile"); */
 };
 
 const homeClick = () => {
-    FlowRouter.go("/");
+    history.push('/');
+    /* FlowRouter.go("/"); */
 };
 
 const messageClick = () => {
-    FlowRouter.go("/messages");
+    history.push('/messenger');
+    /* FlowRouter.go("/messages"); */
 };
 
 const notifiClick = () => {
-    FlowRouter.go("/notifications");
+    history.push('/notifications');
+   /* FlowRouter.go("/notifications"); */
 };
 
 const connectClick = () => {
-    FlowRouter.go("/connect");
+    history.push('/connect');
+    /* FlowRouter.go("/connect");*/
 };
 
 const questionClick = () => {
-    FlowRouter.go("/questions");
+    history.push('/questions');
+    /* FlowRouter.go("/questions"); */
 };
 
 const messageListHide = () => {
@@ -53,7 +62,7 @@ class Navigation extends Component{
             console.log("clicked");
             this.setState({ isModalOpen: true })
         } else {
-            FlowRouter.go("/login");
+            /* FlowRouter.go("/login"); */
         }
     }
 

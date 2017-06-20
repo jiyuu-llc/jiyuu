@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import ConversationList from '../containers/conversationList.js'
-import MessageList from '../containers/messageList.js'
+import ConversationList from '../../containers/messenger/conversationList.js'
+import MessageList from '../../containers/messenger/messageList.js'
 import NewMsgPop from './newMsgPop.js'
 import NewDMsgPop from './newDMsgPop';
 

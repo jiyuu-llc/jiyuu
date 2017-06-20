@@ -1,5 +1,5 @@
 import React from 'react';
-import ConvoItem from '../components/conversationItem.js';
+import ConvoItem from './conversationItem.js';
 
 const renderIfData = (convoItems) => {
     

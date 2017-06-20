@@ -1,6 +1,6 @@
 import React from 'react';
 import Hammer from 'react-hammerjs';
-import Render from '../../core/components/render.jsx'
+import Render from '../../components/render.jsx'
 
 
 const MessageItem = ({data}) => ({

@@ -1,4 +1,4 @@
-import NewMsgPop from '../components/newMsgPop.js';
+import NewMsgPop from '../../components/messenger/newMsgPop.js';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
 export const composer = ({context, clearErrors}, onData) => {

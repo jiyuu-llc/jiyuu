@@ -1,15 +1,18 @@
 
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
+import {
+    BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
-import MainLayout from '../../ui/components/main_layout.jsx';
 import List from '../../ui/containers/list.js'
+import Messenger from '../../ui/components/messenger/messenger.jsx';
+import Settings from '../../ui/components/settings.jsx'
 
 export default () => (
-
-    <BrowserRouter>
-        <Route component={MainLayout}>
+    <Router history={history}>
+        <Switch>
             <Route path="/" component={List} />
-        </Route>
-    </BrowserRouter>
+            <Route path="/messages" component={Messenger} />
+            <Route path="/messages" component={Settings} />
+        </Switch>
+    </Router>
 );

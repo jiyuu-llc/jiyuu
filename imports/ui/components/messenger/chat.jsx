@@ -1,5 +1,5 @@
 import React from 'react';
-import SimpleWebRTC from '../../../configs/simplewebrtc.bundle';
+import SimpleWebRTC from '../../../old/configs/simplewebrtc.bundle';
 
 
 

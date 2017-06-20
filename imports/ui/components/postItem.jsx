@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import moment from 'moment';
 import Hammer from 'react-hammerjs';
 import _ from 'lodash';
-import Render from '../../old/modules/core/components/render.jsx';
+import Render from './render.jsx';
 import CommentsList from "../../old/modules/core/containers/comments.js"
 import Modal from '../../old/modules/core/components/dypop/modal'
 

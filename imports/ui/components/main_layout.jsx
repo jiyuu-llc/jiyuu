@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ResolveUsers from '../containers/connectedUsers.js';
 import Navigation from '../containers/navigation.js';
+import Routes from '../../startup/client/routes.js';
 
 const Paginator = () => ({
 	render(){
@@ -61,7 +62,7 @@ class MainLayout extends Component {
 				<Navigation />
 
 				<div id="page-content">
-					{this.props.children}
+					<Routes/>
 				</div>
 				<Paginator />
 			</div>
