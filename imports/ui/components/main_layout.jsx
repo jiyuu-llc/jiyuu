@@ -73,8 +73,9 @@ class MainLayout extends Component {
 				<div id="page-content">
 						<Switch>
 							<Route exact name="index" path="/" component={List} />
-							<Route path="/messages" component={Messenger} />
 							<Route path="/settings" component={Settings} />
+							<Route path="/messages" component={Messenger} />
+							<Route path="/messages/:convoId" component={Messenger} />
 							<Route path="/connect" component={Connect} />
 						</Switch>
 				</div>

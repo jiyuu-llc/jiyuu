@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 import Hammer from 'react-hammerjs';
+import createHistory from 'history/createBrowserHistory';
+const history = createHistory();
 
 const ConvoItem = ({data}) => ({
 
@@ -18,7 +20,7 @@ const ConvoItem = ({data}) => ({
         _.pull(users, Meteor.userId());
         Session.set('convoName', getUserInfo('_id', users[0], 'name'));
         Session.set('convoId', data._id);
-        FlowRouter.go("/messages/" + data._id);
+        history.push("/messages/" + data._id);
         if(data.type == "destructive"){
             Session.set('convoType','destructive');
         }

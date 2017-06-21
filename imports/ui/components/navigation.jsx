@@ -11,24 +11,9 @@ const searchClick = () => {
     $('#searchInput').focus();
 };
 
-const cogClick = () => {
-    history.push('/settings');
-    /*FlowRouter.go("/settings"); */
-};
-
 const profileClick = () => {
     history.push('/profile');
    /* FlowRouter.go("/profile"); */
-};
-
-const homeClick = () => {
-    history.push('/');
-    /* FlowRouter.go("/"); */
-};
-
-const messageClick = () => {
-    history.push('/messenger');
-    /* FlowRouter.go("/messages"); */
 };
 
 const notifiClick = () => {
@@ -36,14 +21,13 @@ const notifiClick = () => {
    /* FlowRouter.go("/notifications"); */
 };
 
-const connectClick = () => {
-    history.push('/connect');
-    /* FlowRouter.go("/connect");*/
-};
-
 const questionClick = () => {
     history.push('/questions');
     /* FlowRouter.go("/questions"); */
+};
+
+const closeNavDrawer = () =>{
+    $('#exCollapsingNavbar').collapse('hide');
 };
 
 const messageListHide = () => {
@@ -97,10 +81,9 @@ class Navigation extends Component{
                 </nav>
                 <div className="collapse" id="exCollapsingNavbar">
                     <div id={"button-drawer-" + user.navPosition} className="bg-inverse p-a-1">
-                        <div className={"navbar-toggler " + user.color + "-btn"} onClick={connectClick.bind(this)}
-                             data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <Link to="/connect" className={"navbar-toggler " + user.color + "-btn"} onClick={closeNavDrawer.bind(this)}>
                             <i className="fa fa-connectdevelop" aria-hidden="true"/>
-                        </div>
+                        </Link>
                         <div className={"navbar-toggler " + user.color + "-btn"} onClick={questionClick.bind(this)}
                              data-toggle="collapse" data-target="#exCollapsingNavbar">
                             <i className="fa fa-question" aria-hidden="true"/>
@@ -109,8 +92,7 @@ class Navigation extends Component{
                              data-toggle="collapse" data-target="#exCollapsingNavbar">
                             <i className="fa fa-user" aria-hidden="true"/>
                         </div>
-                        <Link to="/settings" className={"navbar-toggler " + user.color + "-btn"}
-                             data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <Link to="/settings" className={"navbar-toggler " + user.color + "-btn"} onClick={closeNavDrawer.bind(this)}>
                             <i className="fa fa-cog" aria-hidden="true"/>
                         </Link>
                         <div className={"navbar-toggler " + user.color + "-btn"} onClick={notifiClick.bind(this)}
