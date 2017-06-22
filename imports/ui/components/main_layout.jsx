@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
 import ResolveUsers from '../containers/connectedUsers.js';
-import Navigation from '../containers/navigation.js';
-import Connect from '../containers/connect.js';
+import Navigation from '../containers/navigation/navigation.js';
+import Connect from '../containers/connections/connect.js';
 
 import {
 	BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
-import List from '../../ui/containers/list.js'
+import List from '../containers/feed/list.js'
 import Messenger from '../../ui/components/messenger/messenger.jsx';
 import Settings from '../../ui/containers/settings.js'
+import You from '../../ui/components/you/you.jsx'
+import  Notifications from '../../ui/containers/notifications/notifications.js'
+import Login from '../../ui/components/login/loginForm.jsx'
+import Requests from '../../ui/components/requests/requests.jsx'
 
 
 const Paginator = () => ({
@@ -77,6 +81,10 @@ class MainLayout extends Component {
 							<Route path="/messages" component={Messenger} />
 							<Route path="/messages/:convoId" component={Messenger} />
 							<Route path="/connect" component={Connect} />
+							<Route path="/you" component={You} />
+							<Route path="/notifications" component={Notifications} />
+							<Route path="/login" component={Login} />
+							<Route path="/requests" component={Requests} />
 						</Switch>
 				</div>
 				<Paginator />

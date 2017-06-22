@@ -34,7 +34,7 @@ Meteor.methods({
           if (Meteor.isClient){
               $("#p-" + postId).empty();
           }
-          Feed.update({_id: postId}, {$set: {content: newBody, createdAt: new Date()}});
+          Feed.update({_id: postId}, {$set: {content: newBody}});
       } else {
           console.log("Not your post!");
       }

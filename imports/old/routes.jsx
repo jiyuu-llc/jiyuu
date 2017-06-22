@@ -3,7 +3,7 @@ import React from 'react';
 import {mount} from 'react-mounter';
 
 import MainLayout from '../ui/components/main_layout';
-import List from '../ui/containers/list.js';
+import List from '../ui/containers/feed/list.js';
 import TestList from '../../client/modules/core/containers/testList.jsx'
 import Profile from '../../client/modules/core/containers/profile/profile.js';
 import Experiences from '../../client/modules/core/containers/profile/experiences.js';
@@ -21,7 +21,7 @@ import Settings from '../../client/modules/core/containers/settings.js';
 import Messenger from '../../client/modules/messenger/components/messenger.jsx';
 import LoginForm from '../../client/modules/core/components/loginForm.jsx';
 import Connect from '../../client/modules/core/containers/connect.js';
-import Questions from '../../client/modules/jiyuu/components/jiyuu.js';
+import Questions from '../../client/modules/jiyuu/components/you.jsx';
 import AccountType from '../../client/modules/core/components/signup/accountType.js';
 import Interests from '../../client/modules/core/components/signup/interests.js';
 import Admin from '../../client/modules/core/components/admin.jsx';
@@ -212,8 +212,8 @@ export default function (injectDeps, {FlowRouter}) {
         }
     });
 
-    FlowRouter.route('/questions', {
-        name: 'questions',
+    FlowRouter.route('/you', {
+        name: 'you',
         action() {
 
             mount(MainLayoutCtx, {

@@ -45,10 +45,9 @@ class Messenger extends Component {
     gotoBetaChat() {
         window.location.href = "/call";
     }
-    
 
     render() {
-        console.log(this.props.match);
+        console.log(this.props.match.params.convoId);
         return (
             <div className="messenger-card-contain">
             <div id="messenger-card" className="card">
