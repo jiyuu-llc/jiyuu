@@ -14,7 +14,7 @@ class ConnectSelect extends Component{
             var postData = "";
             if (post.file) {
                 console.log(post.file);
-                uploader.send(file, (error, downloadUrl) => {
+                uploader.send(post.file, (error, downloadUrl) => {
                     if (error) {
                         // Log servic -e detailed response
                         console.error('Error uploading', uploader.xhr.response);
@@ -22,12 +22,12 @@ class ConnectSelect extends Component{
                     }
                     else {
                         postData = downloadUrl;
-                        Meteor.call('feed.add', post.content, canView, postData, (err, res) => {
+                        Meteor.call('feed.add', post.content, canView, postData,post.file.type, (err, res) => {
                             if (!err && res) {
                                 $("#postValue").val(null);
                             }
                         });
-                        Meteor.call('saveFile', file.type, downloadUrl);
+                        Meteor.call('saveFile', post.type, downloadUrl);
                     }
                 });
             }else{
