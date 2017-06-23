@@ -6,13 +6,15 @@ import Connect from '../containers/connections/connect.js';
 import {
 	BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
-import List from '../containers/feed/list.js'
+import List from '../containers/feed/postList.js'
 import Messenger from '../../ui/components/messenger/messenger.jsx';
 import Settings from '../../ui/containers/settings.js'
 import You from '../../ui/components/you/you.jsx'
 import  Notifications from '../../ui/containers/notifications/notifications.js'
 import Login from '../../ui/components/login/loginForm.jsx'
 import Requests from '../../ui/components/requests/requests.jsx'
+import Profile from '../../ui/containers/profile/profile.js'
+import Media from '../../ui/containers/profile/media.js';
 
 
 const Paginator = () => ({
@@ -79,12 +81,14 @@ class MainLayout extends Component {
 							<Route exact name="index" path="/" component={List} />
 							<Route path="/settings" component={Settings} />
 							<Route path="/messages" component={Messenger} />
-							<Route path="/messages/:convoId" component={Messenger} />
+							<Route path="/messages/convo/:convoId" component={Messenger} />
 							<Route path="/connect" component={Connect} />
 							<Route path="/you" component={You} />
 							<Route path="/notifications" component={Notifications} />
 							<Route path="/login" component={Login} />
 							<Route path="/requests" component={Requests} />
+							<Route path="/profile/:user" component={Profile} />
+							<Route path="/profile/:user/media" component={Media} />
 						</Switch>
 				</div>
 				<Paginator />

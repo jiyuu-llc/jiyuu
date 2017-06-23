@@ -30,7 +30,15 @@ class Navigation extends Component{
 
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false, media: null }
+        this.state = { isModalOpen: false, media: null, newPost: null};
+        this.handler = this.handler.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+    }
+
+    handler(postObject) {
+        this.setState({
+            newPost: postObject
+        });
     }
 
     openModal() {
@@ -43,16 +51,16 @@ class Navigation extends Component{
     }
 
     closeModal() {
-        this.setState({ isModalOpen: false })
+        this.setState({ isModalOpen: false, newPost: null })
     }
 
     render(){
         const {user} = this.props;
 
-        if(!Session.get('newPost')){
-            var content = <NewPost/>
+        if(!this.state.newPost){
+            var content = <NewPost action={this.handler}/>
         }else{
-             content = <ConnectSelect/>
+             content = <ConnectSelect action={this.closeModal} newPost={this.state.newPost}/>
         }
         return(
             <div id={user.navPosition} className={"box-shadow " + user.color} onClick={messageListHide.bind(this)}>
@@ -84,10 +92,9 @@ class Navigation extends Component{
                         <Link to="/you" className={"navbar-toggler " + user.color + "-btn"} onClick={closeNavDrawer.bind(this)}>
                             <i className="fa fa-question" aria-hidden="true"/>
                         </Link>
-                        <div className={"navbar-toggler " + user.color + "-btn"} onClick={profileClick.bind(this)}
-                             data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <Link to={"/profile/" + user.username} className={"navbar-toggler " + user.color + "-btn"} onClick={closeNavDrawer.bind(this)}>
                             <i className="fa fa-user" aria-hidden="true"/>
-                        </div>
+                        </Link>
                         <Link to="/settings" className={"navbar-toggler " + user.color + "-btn"} onClick={closeNavDrawer.bind(this)}>
                             <i className="fa fa-cog" aria-hidden="true"/>
                         </Link>

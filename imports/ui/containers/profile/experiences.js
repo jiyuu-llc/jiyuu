@@ -6,7 +6,7 @@ import Experiences from '../../../../../ui/components/profile/experiences.jsx';
 
 const composer = (props, onData) => {
     if (Meteor.subscribe('experiences').ready()) {
-        const user = Meteor.users.findOneFaster({username: FlowRouter.getParam('username')});
+        const user = Meteor.users.findOneFaster({username: props.username});
         let experiences;
 
         try {

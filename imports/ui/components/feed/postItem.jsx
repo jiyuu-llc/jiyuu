@@ -5,6 +5,7 @@ import _ from 'lodash';
 import Render from '../render.jsx';
 import CommentsList from "../../containers/feed/comments.js"
 import Modal from '../dypop/modal'
+import {Link} from 'react-router-dom'
 
 const postOptionsClick = (post) => {
     console.log("Clicked!");
@@ -66,16 +67,14 @@ class PostItem extends Component {
         this.state = { isModalOpen: false, media: null }
     }
 
-    openModal(media) {
-        this.setState({ isModalOpen: true, media: media })
-    }
-
-    closeModal() {
-        this.setState({ isModalOpen: false })
-    }
-
     react(postId, reaction) {
         Meteor.call('feed.react', postId, reaction);
+    }
+
+    mediaClick(action, media){
+        console.log(action);
+        console.log(media);
+        action(media.data);
     }
 
     renderIfData(post){
@@ -83,10 +82,10 @@ class PostItem extends Component {
             <div className="card box-shadow">
                 <div className="post-heading">
                     <div className="post-info">
-                        <a href={"profile/" + getUserInfo('_id', post.userId, 'username')}>
+                        <Link to={"/profile/" + getUserInfo('_id', post.userId, 'username')}>
                             <img className="post-profile-image" height="57px" width="57px" src={getUserInfo('_id', post.userId, 'avatar') || fakeUser.avatar} alt=""/>
                             <p className="post-name">{post.legalName || getUserInfo('_id', post.userId, 'name')}</p>
-                        </a>
+                        </Link>
                         <h5 className="postDate">{post.createdAt ? moment(post.createdAt).fromNow() : null}</h5>
                     </div>
                     <div className="post-options" onClick={postOptionsClick.bind(this, post)}>
@@ -96,7 +95,7 @@ class PostItem extends Component {
                 <Hammer onDoubleTap={handleTap.bind(this, post)}>
                     <p id={"p-" + post._id} className="postBody" dangerouslySetInnerHTML={{__html: post.content}} />
                 </Hammer>
-                <div onClick={() => this.openModal(post.data)}>
+                <div onClick={this.mediaClick.bind(this, this.props.action, post)}>
                     <Render data={post}/>
                 </div>
 
@@ -134,10 +133,6 @@ class PostItem extends Component {
         return (
             <div id={post._id} className="post-item">
                 {this.renderIfData(post)}
-                <Modal isOpen={this.state.isModalOpen} onClose={this.closeModal}>
-                    <img className="popupLightBox-img" src={this.state.media}/>
-                    <p><button onClick={this.closeModal}>Close</button></p>
-                </Modal>
             </div>
         )
     }

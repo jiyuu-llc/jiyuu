@@ -1,13 +1,13 @@
-import List from '../../../../../imports/ui/components/list.jsx';
+import List from '../../components/feed/postList.jsx';
 import {composeWithTracker} from 'react-komposer';
 import {Feed} from '/lib/collections';
 
 export const composer = (props, onData) => {
-
-    if (subsManager.subscribe('userFeed', FlowRouter.getParam('username'), Session.get('paginationLimit')).ready()
+    console.log(props.user.username);
+    if (subsManager.subscribe('userFeed', props.user.username, Session.get('paginationLimit')).ready()
         && connectedUserSub.ready()) {
       
-        var user = Meteor.users.findOneFaster({username: FlowRouter.getParam('username')}, {fields: {_id: 1}});
+        var user = Meteor.users.findOneFaster({username: props.user.username}, {fields: {_id: 1}});
         var feed = fakeFeed;
         if (user){
             feed = Feed.find(

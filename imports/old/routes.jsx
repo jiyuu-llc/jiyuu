@@ -3,7 +3,7 @@ import React from 'react';
 import {mount} from 'react-mounter';
 
 import MainLayout from '../ui/components/main_layout';
-import List from '../ui/containers/feed/list.js';
+import List from '../ui/containers/feed/postList.js';
 import TestList from '../../client/modules/core/containers/testList.jsx'
 import Profile from '../../client/modules/core/containers/profile/profile.js';
 import Experiences from '../../client/modules/core/containers/profile/experiences.js';

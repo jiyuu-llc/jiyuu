@@ -2,11 +2,11 @@ import React from 'react';
 
 import {composeWithTracker} from 'react-komposer';
 import {Files} from '/lib/collections';
-import Media from '../../../../../ui/components/profile/media.jsx';
+import Media from '../../../ui/components/profile/media.jsx';
 
 const composer = (props, onData) => {
     if (connectedUserSub.ready() && Meteor.subscribe('files').ready()) {
-        const user = Meteor.users.findOneFaster({username: FlowRouter.getParam('username')});
+        const user = Meteor.users.findOneFaster({username: props.match.params.user});
         let files;
         try { files = Files.findOne({userId: user._id}).files; } catch(TypeError) {}
         onData(null, {user, files});

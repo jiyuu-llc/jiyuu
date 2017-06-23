@@ -1,7 +1,7 @@
 import React from 'react';
 import { composeWithTracker } from 'react-komposer';
 import { Feed } from '/lib/collections';
-import List from '../../components/feed/list.jsx';
+import PostList from '../../components/feed/postList.jsx';
 
 const composer = ( props, onData ) => {
     if (subsManager.subscribe('mainFeed', Session.get('paginationLimit')).ready()
@@ -11,4 +11,4 @@ const composer = ( props, onData ) => {
     }
 };
 
-export default composeWithTracker(composer, List)(List);
+export default composeWithTracker(composer, PostList)(PostList);

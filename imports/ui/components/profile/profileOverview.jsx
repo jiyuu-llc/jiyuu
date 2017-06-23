@@ -8,16 +8,15 @@ const clickOverview = () => {
     $("#flip").toggleClass(".flipper");
 };
 
-const profilePicClick = () => {
-    console.log("test");
-    if (FlowRouter.getParam('username') === Meteor.user().username){
+const profilePicClick = (user) => {
+    if (user.username === Meteor.user().username){
         $("#confirmUpload").show();
     }
 };
 
-const coverPicClick = () => {
+const coverPicClick = (user) => {
     console.log("clicked");
-    if (FlowRouter.getParam('username') === Meteor.user().username){
+    if (user.username === Meteor.user().username){
         $("#confirmCoverUpload").show();
     }
 };
@@ -84,10 +83,6 @@ const coverChange = () =>{
     }
 };
 
-const userNameClick = () =>{
-    FlowRouter.go(FlowRouter.getParam('username'));
-};
-
 class ProfileOverview extends Component {
     constructor(props) {
         super(props);
@@ -101,16 +96,16 @@ class ProfileOverview extends Component {
                     <div className="front">
                         <span className="fa fa-info-circle user-overview-toggle-active" aria-hidden="true" onClick={clickOverview.bind(this)}/>
                         <div className="card panel-white profile-widget panel-shadow panel-flip">
-                            <div onClick={coverPicClick.bind(this)} className="cover-upload-contain">
+                            <div onClick={coverPicClick.bind(this, user)} className="cover-upload-contain">
                                 <input onChange={coverChange.bind(this)} id="coverUpload" className="picOverlay" type="file"/>
-                                <span onClick={coverPicClick.bind(this)} className="fa fa-camera cover-upload-icon" type='file'> </span>
+                                <span className="fa fa-camera cover-upload-icon" type='file'> </span>
                             </div>
                             <img id="coverPhoto" className="coverPhoto box-shadow" src={user.cover}/>
                             <button id="confirmCoverUpload" onClick={confirmCoverUploadClick.bind(this)} className="btn btn-primary-outline">Save</button>
                             <div className="col-xs-12 topP">
                                 <div className="profilePicContain">
                                     <button id="confirmUpload" onClick={confirmUploadClick.bind(this)} className="btn btn-primary-outline">Save</button>
-                                    <input id="profileUpload" onChange={profileChange.bind(this)} type="file" className="picOverlay" onClick={profilePicClick.bind(this)}/>
+                                    <input id="profileUpload" onChange={profileChange.bind(this, user)} type="file" className="picOverlay" onClick={profilePicClick.bind(this, user)}/>
                                     <img className="hidden-md-up" id="profilePic" src={user.avatar} width="130px" height="130px"/>
                                 </div>
                             </div>

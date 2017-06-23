@@ -20,7 +20,7 @@ const ConvoItem = ({data}) => ({
         _.pull(users, Meteor.userId());
         Session.set('convoName', getUserInfo('_id', users[0], 'name'));
         Session.set('convoId', data._id);
-        history.push("/messages/" + data._id);
+        history.push("/messages/convo/" + data._id);
         if(data.type == "destructive"){
             Session.set('convoType','destructive');
         }

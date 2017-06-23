@@ -7,11 +7,15 @@ const composer = ( props, onData ) => {
     if (subsManager.subscribe('connections').ready()
         && connectedUserSub.ready()) {
 
+        var action = props.action;
+        var newPost = props.newPost;
+
         try {
           var connections = Connections.findOne({}).groups;
         } catch(TypeError) {}
 
-        onData( null, { connections } );
+
+        onData( null, { connections, newPost, action } );
     }
 
 };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ProfileSidebar from './profileSidebar.jsx';
-import Modal from '../../../../../ui/components/dypop/modal'
+import Modal from '../../../ui/components/dypop/modal'
 
 const deleteImage = (file) => {
     console.log(file.url);

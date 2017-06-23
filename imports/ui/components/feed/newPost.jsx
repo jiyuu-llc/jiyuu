@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 
 class NewPost extends Component {
 
-    newPost(){
-        if (Meteor.userId()){
+    newPost = (action) => (e) =>{
+        if (Meteor.userId() && e){
 
             try {
                 var file = document.getElementById('fileUpload').files[0];
@@ -12,21 +12,22 @@ class NewPost extends Component {
 
             var postObject = {
                 content: content,
-                data: file
+                file: file
             };
 
-            Session.set('newPost', postObject);
+            action(postObject);
         }
-    }
+    };
 
     render() {
+        var action = this.props.action;
         return (
                     <div>
                         <div>
                             <textarea className="form-control new-post" rows="5" id="postValue" />
                         </div>
                         <div>
-                            <button type="button" onClick={this.newPost} data-dismiss="modal" className="btn btn-primary">Post</button>
+                            <button type="button" onClick={this.newPost(action)} data-dismiss="modal" className="btn btn-primary">Post</button>
                             <input type="file" id="fileUpload" className="btn btn-primary-outline"/>
                         </div>
                     </div>

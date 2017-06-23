@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const ProfileSidebar = ({user}) => (
 
@@ -7,14 +8,14 @@ const ProfileSidebar = ({user}) => (
             <div className="card card-mini userInfo box-shadow">
                 <br />
                 <center>
-                    <a href={"/profile/" + user.username}>
+                    <Link to={"/profile/" + user.username}>
                         <h4>{user.firstName + ' ' + user.lastName}</h4>
-                    </a>
+                    </Link>
                 </center>
                 <center><h5>@{user.username}</h5></center>
-                <a className="profile-link" href={"/profile/" + user.username + "/experiences"}>Experiences</a>
-                <a className="profile-link" href={"/profile/" + user.username + "/media"}>Media</a>
-                <a className="profile-link" href={"/profile/" + user.username + "/cards"}>Cards</a>
+                <Link className="profile-link" to={"/profile/" + user.username + "/experiences"}>Experiences</Link>
+                <Link className="profile-link" to={"/profile/" + user.username + "/media"}>Media</Link>
+                <Link className="profile-link" to={"/profile/" + user.username + "/cards"}>Cards</Link>
             </div>
             <div className="card box-shadow">
                 <div className="card-block"><h4>Stats</h4></div>

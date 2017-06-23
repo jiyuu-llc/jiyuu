@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import     React, {Component} from 'react';
 import ProfileOverview from './profileOverview.jsx';
 import List from '../../containers/profile/list.js';
 import ProfileSidebar from './profileSidebar.jsx';
@@ -18,7 +18,7 @@ class Profile extends Component {
                 <div className="col-md-8 profileRight">
                     <ProfileOverview user={user || fakeUser} />
                     <div id="profileMain" className="col-xs-12">
-                        <List />
+                        <List user={user || fakeUser}/>
                     </div>
                 </div>
             </div>

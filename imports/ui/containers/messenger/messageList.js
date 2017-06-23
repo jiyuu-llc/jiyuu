@@ -5,7 +5,7 @@ import MessageList from '../../components/messenger/messageList.jsx';
 
 const composer = (props, onData ) => {
   if (Meteor.subscribe('convos').ready()) {
-    const convoId = props.convo;
+    const convoId = "";
     try {
       var messageItems = Convos.findOne({_id: convoId, "messages.deleted": false}, {fields:{messages:1}}).messages;
     } catch (TypeError) {}

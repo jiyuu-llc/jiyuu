@@ -1,13 +1,11 @@
-import Profile from '../../../../../ui/components/profile/profile.jsx';
+import Profile from '../../../ui/components/profile/profile.jsx';
 import {composeWithTracker} from 'react-komposer';
 
 export const composer = (props, onData) => {
   // blank container for enabling getUserInfo global function
-  const username = FlowRouter.getParam('username');
-
+  const username = props.match.params.user;
   if (connectedUserSub.ready()){
     const user = Meteor.users.findOneFaster({username: username});
-
     onData(null, {user});
   }
 };
