@@ -1,19 +1,22 @@
+
+#navBar{
+    z-index: 200;
+}
+
 #search{
     margin: 9px 8px 10px 8px;
     width: 100%;
     display: none;
 }
 
-#topNav{
+.topNav{
     position: fixed;
-    z-index: 200;
     top:0;
     width: 100%;
 }
 
-#bottomNav{
+.bottomNav{
     position: fixed;
-    z-index: 200;
     bottom:0;
     width: 100%;
 }
@@ -26,42 +29,40 @@
 }
 
 
-
-#leftNav{
+.leftNav{
     position: fixed;
-    z-index: 200;
     top: 0;
     left:0;
     height: 100%;
 }
 
-#rightNav{
+.rightNav{
     position: fixed;
-    z-index: 200;
     top: 0;
     right:0;
     height: 100%;
 }
 
-#leftNav nav{
+.leftNav nav{
     flex-direction: column;
 }
 
-#leftNav nav div{
+.leftNav nav div{
     margin: 20px 0;
 }
 
 
-#rightNav nav{
+.rightNav nav{
     flex-direction: column !important;
 }
 
-#rightNav nav div{
+.rightNav nav div{
     margin: 20px 0;
 }
 
 
 .navbar-toggler{
+    text-decoration: none;
     border-radius: 50% !important;
 }
 

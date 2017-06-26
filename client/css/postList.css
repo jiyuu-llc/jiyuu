@@ -1,4 +1,5 @@
 .postList{
     padding: 20px 6px 0 6px;
     -webkit-overflow-scrolling: touch;
+    z-index: 100;
 }

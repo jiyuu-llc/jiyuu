@@ -44,14 +44,14 @@ class Navigation extends Component{
     openModal() {
         if (Meteor.userId()) {
             console.log("clicked");
-            this.setState({ isModalOpen: true })
+            this.setState({ isModalOpen: true });
         } else {
             /* FlowRouter.go("/login"); */
         }
     }
 
     closeModal() {
-        this.setState({ isModalOpen: false, newPost: null })
+        this.setState({ isModalOpen: false, newPost: null });
     }
 
     render(){
@@ -63,7 +63,7 @@ class Navigation extends Component{
              content = <ConnectSelect action={this.closeModal} newPost={this.state.newPost}/>
         }
         return(
-            <div id={user.navPosition} className={"box-shadow " + user.color} onClick={messageListHide.bind(this)}>
+            <div id="navBar" className={"box-shadow " + user.color + " " + user.navPosition} onClick={messageListHide.bind(this)}>
                 <nav className={"navbar navbar-jiyuu-" + user.navPosition}>
                     <Link to="/" className={"navbar-toggler " + user.color + "-btn"}>
                         <i className="fa fa-home" aria-hidden="true"/>

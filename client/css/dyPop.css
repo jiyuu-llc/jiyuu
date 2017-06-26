@@ -28,6 +28,7 @@
 }
 
 .dynamicRender{
+    z-index: 9001;
     position: fixed;
     top: 0;
     left: 0;
