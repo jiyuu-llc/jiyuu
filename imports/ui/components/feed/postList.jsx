@@ -1,44 +1,58 @@
 import React, {Component} from 'react';
 import PostItem from './postItem.jsx';
-import PostModal from './postModal.js'
-import Modal from '../dypop/modal'
+import PostOptions from './postOptions.jsx';
+import Modal from '../dypop/modal';
 
 class PostList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false, media: null };
-        this.setMedia = this.setMedia.bind(this);
+        this.state = {
+            mediaModal: false,
+            optionsModal: false,
+            media: null,
+            currentPost: null
+        };
+        this.openModal = this.openModal.bind(this);
     }
 
-    setMedia(media){
-        this.setState({media:media, isModalOpen: !this.state.isModalOpen});
+    openModal(type, postId, media){
+        if(type != "options"){
+            this.setState({media:media, mediaModal: !this.state.mediaModal});
+        }else{
+            this.setState({currentPost: postId, optionsModal: !this.state.optionsModal});
+        }
     }
 
 
-    closeModal() {
-        this.setState({ isModalOpen: false })
+    closeModal(type) {
+        if(type != "options"){
+            this.setState({mediaModal: !this.state.mediaModal});
+        }else{
+            this.setState({optionsModal: !this.state.optionsModal});
+        }
     }
 
     renderIfData = (feed) => {
         if (feed && feed.length > 0) {
             return feed.map((post) => {
-                return <PostItem action={this.setMedia} key={post._id} post={post} />
+                return <PostItem action={this.openModal} key={post._id} post={post} />
             });
         }
     };
 
     render(){
-        var media = this.state.media;
-        console.log(media || "yolo");
+        console.log(this.state.mediaModal);
         return(
             <div>
                 <div className="postList col-md-12">
                     {this.renderIfData(this.props.feed)}
                 </div>
-                <PostModal/>
-                <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+                <Modal isOpen={this.state.mediaModal} onClose={() => this.closeModal("media")}>
                     <img className="popupLightBox-img" src={this.state.media}/>
+                </Modal>
+                <Modal className="popupModal" isOpen={this.state.optionsModal} onClose={() => this.closeModal("options")}>
+                    <PostOptions post={this.state.currentPost}/>
                 </Modal>
             </div>
         )

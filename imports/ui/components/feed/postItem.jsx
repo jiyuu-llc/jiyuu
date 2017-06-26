@@ -7,12 +7,6 @@ import CommentsList from "../../containers/feed/comments.js"
 import Modal from '../dypop/modal'
 import {Link} from 'react-router-dom'
 
-const postOptionsClick = (post) => {
-    console.log("Clicked!");
-        Session.set('currentPost', post);
-        $("#postOptions").modal("toggle");
-};
-
 const handleTap = (post) => {
     if (post.userId === Meteor.userId()) {
         const pId = ("#p-" + post._id);
@@ -72,10 +66,12 @@ class PostItem extends Component {
     }
 
     mediaClick(action, media){
-        console.log(action);
-        console.log(media);
-        action(media.data);
+        action("media", null, media.data);
     }
+
+    postOptionsClick = (action, post) => {
+        action("options", null, post._id);
+    };
 
     renderIfData(post){
         return (
@@ -88,7 +84,7 @@ class PostItem extends Component {
                         </Link>
                         <h5 className="postDate">{post.createdAt ? moment(post.createdAt).fromNow() : null}</h5>
                     </div>
-                    <div className="post-options" onClick={postOptionsClick.bind(this, post)}>
+                    <div className="post-options" onClick={this.postOptionsClick.bind(this, this.props.action, post,)}>
                         <i className="fa fa-ellipsis-h options-button" aria-hidden="true"/>
                     </div>
                 </div>

@@ -1,0 +1,13 @@
+
+.menu-item{
+    font-size: 25px;
+    background-color: white;
+    font-family: 'Source Sans Pro', 'Oxygen', sans-serif;
+    color: #3a3a3a;
+    border-bottom: 1px solid #9c9c9c;
+    text-align: center;
+}
+
+.menu-item:hover{
+    background-color: #d3fcff;
+}
