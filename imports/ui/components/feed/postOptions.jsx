@@ -13,7 +13,7 @@ class PostOptions extends Component{
         }
     }
 
-    editPost = (post) =>{
+    editPost = (post, action) =>{
         console.log("CLICKED!");
         if (post.userId === Meteor.userId()) {
             const pId = ("#p-" + post._id);
@@ -22,17 +22,22 @@ class PostOptions extends Component{
             $(pId).focus();
             $(sId).show();
         }
+        action("options");
+    };
+
+    removePost(){
+        this.setState({option: "remove"});
     };
 
 
     Menu(){
         return(
             <div>
-                <div className="menu-item" onClick={this.editPost.bind(this)}>
+                <div className="menu-item" onClick={this.editPost.bind(this, this.props.post, this.props.action)}>
                     Edit Post
                 </div>
-                <div className="menu-item">
-                    Delete Post
+                <div className="menu-item" onClick={this.removePost.bind(this)}>
+                    Remove Post
                 </div>
                 <div className="menu-item">
                     Change Privacy
@@ -48,14 +53,13 @@ class PostOptions extends Component{
 
         switch(this.state.option){
             case 'menu':
-                Option = this.menu;
-                break;
-            case "edit":
-                this.editPost.bind(this, this.props.post);
-                var Option = null;
+                var Option = this.Menu();
                 break;
             case 'remove':
-                Option = <RemovePost/>;
+                Option = <RemovePost action={this.props.action} post={this.props.post}/>;
+                break;
+            case 'privacy':
+                var Option = this.Menu();
                 break;
             default:
                 return false;
@@ -64,7 +68,7 @@ class PostOptions extends Component{
 
         return (
             <div>
-                {Option || this.Menu()}
+                {Option}
             </div>
         )
     }

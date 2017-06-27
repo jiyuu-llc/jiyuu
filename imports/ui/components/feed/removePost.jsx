@@ -1,28 +1,30 @@
 import React, {Component} from 'react';
 
 
-
-
 class RemovePost extends Component{
 
 
-    removePostClick = (id) =>{
-        Meteor.call('feed.remove',id);
+    removePostClick = (post, action) =>{
+        Meteor.call('feed.remove',post._id);
+        action("options");
     };
 
+    closeModal(action){
+        action("options")
+    };
 
     render(){
         return(
-                <div className="modal-content">
-                    <div className="modal-body">
-                        <h6>Are you sure you would like to permanently delete this post?</h6>
-                    </div>
-                    <div className="modal-footer">
-                        <button type="button" onClick={removePostClick.bind(this, this.props.post._id)} data-dismiss="modal"
-                                className="btn btn-danger">Remove
-                        </button>
-                        <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+            <div>
+                <div className="modal-body">
+                    <h6>Are you sure you would like to permanently delete this post?</h6>
+                </div>
+                <div className="modal-footer">
+                    <button type="button" onClick={this.removePostClick.bind(this, this.props.post, this.props.action)} className="btn btn-danger">
+                        Remove
+                    </button>
+                    <button type="button" onClick={this.closeModal.bind(this, this.props.action)} className="btn btn-default">Close</button>
+                </div>
             </div>
         )
     }

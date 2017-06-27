@@ -70,7 +70,7 @@ class PostItem extends Component {
     }
 
     postOptionsClick = (action, post) => {
-        action("options", null, post._id);
+        action("options", post, null);
     };
 
     renderIfData(post){
@@ -95,7 +95,7 @@ class PostItem extends Component {
                     <Render data={post}/>
                 </div>
 
-                <button style={{display:"none"}} id={"s-" + post._id} onClick={savePost.bind(this, post)} className="btn btn-primary-outline">Save</button>
+                <button style={{display:"none", maxWidth: 100, marginTop: 10}} id={"s-" + post._id} onClick={savePost.bind(this, post)} className="btn btn-primary-outline">Save</button>
                 <div className="card-block post-interact">
                     <div id={"vote-" + post._id} className="voteButtons">
                         <button type="button" onClick={() => this.react(post._id, 'like')} className="btn btn-danger voteButton">

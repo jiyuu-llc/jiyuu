@@ -14,13 +14,14 @@ class PostList extends Component {
             currentPost: null
         };
         this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
-    openModal(type, postId, media){
+    openModal(type, post, media){
         if(type != "options"){
             this.setState({media:media, mediaModal: !this.state.mediaModal});
         }else{
-            this.setState({currentPost: postId, optionsModal: !this.state.optionsModal});
+            this.setState({currentPost: post, optionsModal: !this.state.optionsModal});
         }
     }
 
@@ -52,7 +53,7 @@ class PostList extends Component {
                     <img className="popupLightBox-img" src={this.state.media}/>
                 </Modal>
                 <Modal className="popupModal" isOpen={this.state.optionsModal} onClose={() => this.closeModal("options")}>
-                    <PostOptions post={this.state.currentPost}/>
+                    <PostOptions action={this.closeModal} post={this.state.currentPost}/>
                 </Modal>
             </div>
         )

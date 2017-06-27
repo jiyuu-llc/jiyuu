@@ -18,7 +18,7 @@
     max-width: 500px;
     left: 0;
     right: 0;
-    margin: 20px auto;
+    margin: 15% auto;
     padding: 30px;
     z-index: 9005;
 }
@@ -50,6 +50,13 @@
 
 .popupQuestion{
 
+}
+
+
+@media screen and (max-width: 768px) {
+    .popupModal {
+        margin: 20% auto;
+    }
 }
 
 
